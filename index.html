@@ -60,6 +60,229 @@
     .template-download {
       margin-top: 15px;
     }
+    /* Enhanced Dashboard Styles */
+    .dashboard-summary-box {
+      border-left: 4px solid #3c8dbc;
+      padding: 15px;
+      background: #fff;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .dashboard-summary-box.at-need {
+      border-left-color: #00a65a;
+    }
+    .dashboard-summary-box.pre-need {
+      border-left-color: #f39c12;
+    }
+    .task-item {
+      padding: 10px;
+      border-bottom: 1px solid #f4f4f4;
+      display: flex;
+      align-items: center;
+    }
+    .task-item:last-child {
+      border-bottom: none;
+    }
+    .task-item .task-checkbox {
+      margin-right: 10px;
+    }
+    .task-item.completed .task-text {
+      text-decoration: line-through;
+      color: #999;
+    }
+    .task-priority-high {
+      color: #dd4b39;
+    }
+    .task-priority-medium {
+      color: #f39c12;
+    }
+    .task-priority-low {
+      color: #00a65a;
+    }
+    .calendar-mini-event {
+      padding: 5px 10px;
+      margin-bottom: 5px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+    .calendar-mini-event.visitation {
+      background-color: #d2d6de;
+      border-left: 3px solid #605ca8;
+    }
+    .calendar-mini-event.funeral {
+      background-color: #f4e7d3;
+      border-left: 3px solid #f39c12;
+    }
+    .calendar-mini-event.graveside {
+      background-color: #d4edda;
+      border-left: 3px solid #00a65a;
+    }
+    .calendar-mini-event.cremation {
+      background-color: #f8d7da;
+      border-left: 3px solid #dd4b39;
+    }
+    .cash-flow-positive {
+      color: #00a65a;
+    }
+    .cash-flow-negative {
+      color: #dd4b39;
+    }
+    .workflow-step {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 2px;
+      border-radius: 15px;
+      font-size: 11px;
+      background-color: #f4f4f4;
+    }
+    .workflow-step.completed {
+      background-color: #00a65a;
+      color: #fff;
+    }
+    .workflow-step.current {
+      background-color: #3c8dbc;
+      color: #fff;
+    }
+    .workflow-step.pending {
+      background-color: #f4f4f4;
+      color: #999;
+    }
+    /* FTC Compliance Badge */
+    .ftc-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      background-color: #00a65a;
+      color: #fff;
+      font-size: 10px;
+      border-radius: 3px;
+      margin-left: 5px;
+    }
+    /* Chain of Custody Tracking */
+    .custody-timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    .custody-timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #ddd;
+    }
+    .custody-step {
+      position: relative;
+      padding: 10px 0;
+    }
+    .custody-step::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #3c8dbc;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #3c8dbc;
+    }
+    .custody-step.verified::before {
+      background-color: #00a65a;
+      box-shadow: 0 0 0 2px #00a65a;
+    }
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #1a1a2e;
+    }
+    body.dark-mode .content-wrapper {
+      background-color: #16213e;
+    }
+    body.dark-mode .box {
+      background-color: #1a1a2e;
+      border-top-color: #0f3460;
+    }
+    body.dark-mode .box-header {
+      background-color: #1a1a2e;
+      color: #e8e8e8;
+    }
+    body.dark-mode .box-body {
+      color: #e8e8e8;
+    }
+    body.dark-mode .table {
+      color: #e8e8e8;
+    }
+    body.dark-mode .table > thead > tr > th,
+    body.dark-mode .table > tbody > tr > td {
+      border-color: #0f3460;
+    }
+    body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
+      background-color: #16213e;
+    }
+    body.dark-mode .main-footer {
+      background-color: #1a1a2e;
+      color: #e8e8e8;
+      border-top-color: #0f3460;
+    }
+    body.dark-mode .dashboard-summary-box {
+      background-color: #1a1a2e;
+      color: #e8e8e8;
+    }
+    body.dark-mode .form-control {
+      background-color: #16213e;
+      color: #e8e8e8;
+      border-color: #0f3460;
+    }
+    body.dark-mode .content-header h1 {
+      color: #e8e8e8;
+    }
+    body.dark-mode .breadcrumb > li > a {
+      color: #b8b8b8;
+    }
+    .dark-mode-toggle {
+      cursor: pointer;
+      padding: 10px 15px;
+    }
+    /* Memorial Website Preview */
+    .memorial-preview {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      text-align: center;
+    }
+    .memorial-preview .deceased-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      border: 4px solid #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    /* Barcode styles */
+    .barcode-container {
+      font-family: 'Libre Barcode 39', cursive;
+      font-size: 48px;
+      text-align: center;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      margin: 10px 0;
+    }
+    /* Low stock alert */
+    .low-stock-alert {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    /* Price list table */
+    .price-list-table th {
+      background-color: #3c8dbc;
+      color: #fff;
+    }
   </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -77,6 +300,63 @@
         </a>
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
+            <!-- Dark Mode Toggle -->
+            <li class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+              <a href="#"><i class="fa fa-moon-o"></i></a>
+            </li>
+            <!-- Notifications -->
+            <li class="dropdown notifications-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-bell-o"></i>
+                <span class="label label-warning">5</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="header">You have 5 notifications</li>
+                <li>
+                  <ul class="menu">
+                    <li><a href="#"><i class="fa fa-users text-aqua"></i> New arrangement scheduled for today</a></li>
+                    <li><a href="#"><i class="fa fa-warning text-yellow"></i> Low stock alert: Memorial Flowers</a></li>
+                    <li><a href="#"><i class="fa fa-clock-o text-red"></i> Task overdue: Embalming - Case #001</a></li>
+                    <li><a href="#"><i class="fa fa-money text-green"></i> Payment received: $2,500</a></li>
+                    <li><a href="#"><i class="fa fa-envelope text-blue"></i> Family message: Doe Family</a></li>
+                  </ul>
+                </li>
+                <li class="footer"><a href="#">View all</a></li>
+              </ul>
+            </li>
+            <!-- Tasks Menu -->
+            <li class="dropdown tasks-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-tasks"></i>
+                <span class="label label-danger">9</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="header">You have 9 tasks</li>
+                <li>
+                  <ul class="menu">
+                    <li>
+                      <a href="#">
+                        <h3>Embalming - John Doe<small class="pull-right">20%</small></h3>
+                        <div class="progress xs"><div class="progress-bar progress-bar-aqua" style="width: 20%"></div></div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <h3>Paperwork - Jane Smith<small class="pull-right">40%</small></h3>
+                        <div class="progress xs"><div class="progress-bar progress-bar-green" style="width: 40%"></div></div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <h3>Casket Selection - Williams<small class="pull-right">60%</small></h3>
+                        <div class="progress xs"><div class="progress-bar progress-bar-red" style="width: 60%"></div></div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer"><a href="#">View all tasks</a></li>
+              </ul>
+            </li>
             <!-- User Account Menu -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -117,11 +397,16 @@
           <li class="header">MAIN NAVIGATION</li>
           <li class="active"><a href="#" data-tab="dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
           <li><a href="#" data-tab="case-management"><i class="fa fa-book"></i> <span>Case Management</span></a></li>
-          <li><a href="#" data-tab="client-records"><i class="fa fa-users"></i> <span>Client & Family Records</span></a></li>
-          <li><a href="#" data-tab="inventory"><i class="fa fa-cubes"></i> <span>Inventory Tracking</span></a></li>
-          <li><a href="#" data-tab="scheduling"><i class="fa fa-calendar"></i> <span>Scheduling & Appointments</span></a></li>
-          <li><a href="#" data-tab="staff"><i class="fa fa-users"></i> <span>Staff Management</span></a></li>
-          <li><a href="#" data-tab="reports"><i class="fa fa-file-text-o"></i> <span>Reports & Analytics</span></a></li>
+          <li><a href="#" data-tab="arrangements-pricing"><i class="fa fa-money"></i> <span>Arrangements & Pricing</span></a></li>
+          <li><a href="#" data-tab="scheduling"><i class="fa fa-calendar"></i> <span>Calendar & Scheduling</span></a></li>
+          <li><a href="#" data-tab="client-records"><i class="fa fa-users"></i> <span>CRM & Family Communication</span></a></li>
+          <li><a href="#" data-tab="accounting"><i class="fa fa-credit-card"></i> <span>Accounting & Payments</span></a></li>
+          <li><a href="#" data-tab="inventory"><i class="fa fa-cubes"></i> <span>Inventory Management</span></a></li>
+          <li><a href="#" data-tab="forms-compliance"><i class="fa fa-file-text"></i> <span>Forms & Compliance</span></a></li>
+          <li><a href="#" data-tab="crematory"><i class="fa fa-fire"></i> <span>Crematory Module</span></a></li>
+          <li><a href="#" data-tab="online-arrangements"><i class="fa fa-globe"></i> <span>Website & Online</span></a></li>
+          <li><a href="#" data-tab="staff"><i class="fa fa-id-badge"></i> <span>Staff Management</span></a></li>
+          <li><a href="#" data-tab="reports"><i class="fa fa-bar-chart"></i> <span>Reports & Analytics</span></a></li>
           <li><a href="#" data-tab="settings"><i class="fa fa-gear"></i> <span>Settings</span></a></li>
         </ul>
       </section>
@@ -141,56 +426,272 @@
       <section class="content">
         <!-- Dashboard Tab -->
         <div id="dashboard" class="tab-content-section active">
+          <!-- Quick Stats Row -->
           <div class="row">
-            <!-- Info Boxes -->
             <div class="col-lg-3 col-xs-6">
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3>150</h3>
-                  <p>Active Cases</p>
+                  <h3>12</h3>
+                  <p>Today's Services</p>
                 </div>
-                <div class="icon"><i class="ion ion-bag"></i></div>
-                <a href="#" class="small-box-footer" data-tab="case-management">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fa fa-calendar-check-o"></i></div>
+                <a href="#" class="small-box-footer" data-tab="scheduling">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <div class="col-lg-3 col-xs-6">
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
-                  <p>Completion Rate</p>
+                  <h3>8 <sup style="font-size: 14px">At-Need</sup></h3>
+                  <p>Active Cases</p>
                 </div>
-                <div class="icon"><i class="ion ion-stats-bars"></i></div>
-                <a href="#" class="small-box-footer" data-tab="reports">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="ion ion-person"></i></div>
+                <a href="#" class="small-box-footer" data-tab="case-management">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <div class="col-lg-3 col-xs-6">
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3>44</h3>
-                  <p>Staff Members</p>
+                  <h3>5 <sup style="font-size: 14px">Pre-Need</sup></h3>
+                  <p>Pre-Arranged</p>
                 </div>
-                <div class="icon"><i class="ion ion-person-add"></i></div>
-                <a href="#" class="small-box-footer" data-tab="staff">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fa fa-file-text-o"></i></div>
+                <a href="#" class="small-box-footer" data-tab="case-management">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <div class="col-lg-3 col-xs-6">
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3>65</h3>
-                  <p>Inventory Items</p>
+                  <h3>$24.5K</h3>
+                  <p>This Week Revenue</p>
                 </div>
-                <div class="icon"><i class="ion ion-pie-graph"></i></div>
-                <a href="#" class="small-box-footer" data-tab="inventory">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <div class="icon"><i class="fa fa-money"></i></div>
+                <a href="#" class="small-box-footer" data-tab="accounting">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           </div>
 
-          <!-- Additional Content: e.g., Recent Cases Table -->
+          <div class="row">
+            <!-- Today's Arrangements -->
+            <div class="col-md-8">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-calendar"></i> Today's Arrangements & Services</h3>
+                  <div class="box-tools pull-right">
+                    <span class="label label-primary">November 30, 2025</span>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Time</th>
+                        <th>Service Type</th>
+                        <th>Deceased</th>
+                        <th>Location</th>
+                        <th>Director</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>9:00 AM</strong></td>
+                        <td><span class="label label-info">Visitation</span></td>
+                        <td>John Doe</td>
+                        <td>Chapel A</td>
+                        <td>James Wilson</td>
+                        <td><span class="label label-success">In Progress</span></td>
+                      </tr>
+                      <tr>
+                        <td><strong>11:00 AM</strong></td>
+                        <td><span class="label label-warning">Funeral</span></td>
+                        <td>Mary Johnson</td>
+                        <td>Main Chapel</td>
+                        <td>Sarah Davis</td>
+                        <td><span class="label label-primary">Scheduled</span></td>
+                      </tr>
+                      <tr>
+                        <td><strong>2:00 PM</strong></td>
+                        <td><span class="label label-success">Graveside</span></td>
+                        <td>Robert Williams</td>
+                        <td>Oak Cemetery</td>
+                        <td>James Wilson</td>
+                        <td><span class="label label-primary">Scheduled</span></td>
+                      </tr>
+                      <tr>
+                        <td><strong>4:00 PM</strong></td>
+                        <td><span class="label label-danger">Cremation</span></td>
+                        <td>Elizabeth Brown</td>
+                        <td>Crematory</td>
+                        <td>Michael Chen</td>
+                        <td><span class="label label-warning">Pending</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="box-footer">
+                  <a href="#" data-tab="scheduling" class="btn btn-primary btn-sm">View Full Calendar</a>
+                  <button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#newCaseModal"><i class="fa fa-plus"></i> New Case</button>
+                </div>
+              </div>
+
+              <!-- Cash Flow Summary -->
+              <div class="box box-success">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-dollar"></i> Cash Flow Summary</h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="dashboard-summary-box">
+                        <h4 class="cash-flow-positive"><i class="fa fa-arrow-up"></i> $18,750</h4>
+                        <p class="text-muted">Payments Received (This Week)</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="dashboard-summary-box">
+                        <h4 class="cash-flow-negative"><i class="fa fa-clock-o"></i> $12,340</h4>
+                        <p class="text-muted">Pending Payments</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="dashboard-summary-box">
+                        <h4><i class="fa fa-calendar"></i> $45,200</h4>
+                        <p class="text-muted">Monthly Revenue</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <table class="table table-condensed">
+                        <thead>
+                          <tr>
+                            <th>Recent Transactions</th>
+                            <th>Case</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Payment - Doe Family</td>
+                            <td>#001</td>
+                            <td class="cash-flow-positive">+$5,200</td>
+                            <td><span class="label label-success">Received</span></td>
+                          </tr>
+                          <tr>
+                            <td>Payment - Smith Family</td>
+                            <td>#002</td>
+                            <td class="cash-flow-positive">+$3,800</td>
+                            <td><span class="label label-success">Received</span></td>
+                          </tr>
+                          <tr>
+                            <td>Invoice - Williams Family</td>
+                            <td>#003</td>
+                            <td class="cash-flow-negative">$7,500</td>
+                            <td><span class="label label-warning">Pending</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="col-md-4">
+              <!-- Tasks Due Today -->
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tasks"></i> Tasks Due Today</h3>
+                  <span class="label label-warning pull-right">9 Tasks</span>
+                </div>
+                <div class="box-body" style="max-height: 300px; overflow-y: auto;">
+                  <div class="task-item">
+                    <input type="checkbox" class="task-checkbox">
+                    <span class="task-text"><i class="fa fa-circle task-priority-high"></i> Embalming - John Doe</span>
+                  </div>
+                  <div class="task-item">
+                    <input type="checkbox" class="task-checkbox">
+                    <span class="task-text"><i class="fa fa-circle task-priority-high"></i> Death Certificate - Mary Johnson</span>
+                  </div>
+                  <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" checked>
+                    <span class="task-text"><i class="fa fa-circle task-priority-medium"></i> Flower Arrangement - Doe Family</span>
+                  </div>
+                  <div class="task-item">
+                    <input type="checkbox" class="task-checkbox">
+                    <span class="task-text"><i class="fa fa-circle task-priority-medium"></i> Casket Selection - Williams</span>
+                  </div>
+                  <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" checked>
+                    <span class="task-text"><i class="fa fa-circle task-priority-low"></i> Obituary Draft - Brown</span>
+                  </div>
+                  <div class="task-item">
+                    <input type="checkbox" class="task-checkbox">
+                    <span class="task-text"><i class="fa fa-circle task-priority-low"></i> Memorial Cards - Johnson</span>
+                  </div>
+                  <div class="task-item">
+                    <input type="checkbox" class="task-checkbox">
+                    <span class="task-text"><i class="fa fa-circle task-priority-medium"></i> Cremation Auth - Brown</span>
+                  </div>
+                </div>
+                <div class="box-footer text-center">
+                  <a href="#" class="btn btn-warning btn-sm btn-block">View All Tasks</a>
+                </div>
+              </div>
+
+              <!-- Upcoming Services Calendar -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-calendar"></i> Upcoming Services</h3>
+                </div>
+                <div class="box-body">
+                  <div class="calendar-mini-event visitation">
+                    <strong>Dec 1</strong> - Visitation: Thompson Family (2:00 PM)
+                  </div>
+                  <div class="calendar-mini-event funeral">
+                    <strong>Dec 1</strong> - Funeral: Anderson (10:00 AM)
+                  </div>
+                  <div class="calendar-mini-event graveside">
+                    <strong>Dec 2</strong> - Graveside: Martinez (11:00 AM)
+                  </div>
+                  <div class="calendar-mini-event cremation">
+                    <strong>Dec 2</strong> - Cremation: Lee Family (3:00 PM)
+                  </div>
+                  <div class="calendar-mini-event visitation">
+                    <strong>Dec 3</strong> - Visitation: Garcia (4:00 PM)
+                  </div>
+                </div>
+                <div class="box-footer">
+                  <a href="#" data-tab="scheduling" class="btn btn-info btn-sm btn-block">Open Full Calendar</a>
+                </div>
+              </div>
+
+              <!-- Quick Actions -->
+              <div class="box box-default">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-bolt"></i> Quick Actions</h3>
+                </div>
+                <div class="box-body">
+                  <button class="btn btn-success btn-block" data-toggle="modal" data-target="#newCaseModal"><i class="fa fa-plus"></i> New At-Need Case</button>
+                  <button class="btn btn-warning btn-block" data-toggle="modal" data-target="#prearrangementModal"><i class="fa fa-file-text"></i> New Pre-Need</button>
+                  <button class="btn btn-info btn-block" data-tab="scheduling"><i class="fa fa-calendar-plus-o"></i> Schedule Service</button>
+                  <button class="btn btn-primary btn-block" data-tab="client-records"><i class="fa fa-envelope"></i> Send Family Update</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Cases with Workflow -->
           <div class="row">
             <div class="col-xs-12">
               <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Recent Cases</h3>
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-list"></i> Active Cases with Workflow Status</h3>
                 </div>
                 <div class="box-body">
                   <table class="table table-bordered">
@@ -198,16 +699,63 @@
                       <tr>
                         <th>Case ID</th>
                         <th>Deceased Name</th>
-                        <th>Status</th>
-                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Service Date</th>
+                        <th>Workflow Progress</th>
+                        <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>001</td>
                         <td>John Doe</td>
-                        <td>In Progress</td>
-                        <td>2025-11-28</td>
+                        <td><span class="label label-success">At-Need</span></td>
+                        <td>Nov 30, 2025</td>
+                        <td>
+                          <span class="workflow-step completed">Reception</span>
+                          <span class="workflow-step completed">Embalming</span>
+                          <span class="workflow-step current">Dressing</span>
+                          <span class="workflow-step pending">Casketing</span>
+                          <span class="workflow-step pending">Service</span>
+                        </td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>002</td>
+                        <td>Mary Johnson</td>
+                        <td><span class="label label-success">At-Need</span></td>
+                        <td>Nov 30, 2025</td>
+                        <td>
+                          <span class="workflow-step completed">Reception</span>
+                          <span class="workflow-step completed">Embalming</span>
+                          <span class="workflow-step completed">Dressing</span>
+                          <span class="workflow-step completed">Casketing</span>
+                          <span class="workflow-step current">Service</span>
+                        </td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>003</td>
+                        <td>Robert Williams</td>
+                        <td><span class="label label-warning">Pre-Need</span></td>
+                        <td>Dec 2, 2025</td>
+                        <td>
+                          <span class="workflow-step completed">Reception</span>
+                          <span class="workflow-step current">Embalming</span>
+                          <span class="workflow-step pending">Dressing</span>
+                          <span class="workflow-step pending">Casketing</span>
+                          <span class="workflow-step pending">Service</span>
+                        </td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -220,71 +768,515 @@
         <!-- Case Management Tab -->
         <div id="case-management" class="tab-content-section">
           <div class="row">
+            <!-- Case Summary Cards -->
+            <div class="col-md-3">
+              <div class="info-box bg-green">
+                <span class="info-box-icon"><i class="fa fa-user-plus"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">At-Need Cases</span>
+                  <span class="info-box-number">8</span>
+                  <span class="progress-description">Active immediate need</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-yellow">
+                <span class="info-box-icon"><i class="fa fa-file-text"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Pre-Need Cases</span>
+                  <span class="info-box-number">5</span>
+                  <span class="progress-description">Pre-arranged services</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-aqua">
+                <span class="info-box-icon"><i class="fa fa-check-circle"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Completed</span>
+                  <span class="info-box-number">142</span>
+                  <span class="progress-description">This year</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-red">
+                <span class="info-box-icon"><i class="fa fa-clock-o"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Pending Tasks</span>
+                  <span class="info-box-number">12</span>
+                  <span class="progress-description">Requires attention</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
             <div class="col-xs-12">
-              <div class="box">
+              <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Case Management</h3>
+                  <h3 class="box-title"><i class="fa fa-book"></i> Case Management</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addCaseModal">
-                      <i class="fa fa-plus"></i> Add New Case
-                    </button>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addCaseModal">
+                        <i class="fa fa-plus"></i> New At-Need Case
+                      </button>
+                      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#prearrangementModal">
+                        <i class="fa fa-file-text"></i> New Pre-Need
+                      </button>
+                    </div>
                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#bulkImportModal" data-import-type="cases">
                       <i class="fa fa-upload"></i> Bulk Import
                     </button>
                   </div>
                 </div>
                 <div class="box-body">
+                  <!-- Filter Options -->
+                  <div class="row" style="margin-bottom: 15px;">
+                    <div class="col-md-3">
+                      <select class="form-control input-sm">
+                        <option value="">All Case Types</option>
+                        <option value="at-need">At-Need</option>
+                        <option value="pre-need">Pre-Need</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <select class="form-control input-sm">
+                        <option value="">All Statuses</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control input-sm" placeholder="Search cases...">
+                    </div>
+                    <div class="col-md-3">
+                      <button class="btn btn-default btn-sm"><i class="fa fa-filter"></i> Apply Filters</button>
+                    </div>
+                  </div>
+
                   <table class="table table-bordered table-striped" id="casesTable">
                     <thead>
                       <tr>
+                        <th style="width: 50px;">
+                          <input type="checkbox" id="selectAllCases">
+                        </th>
                         <th>Case ID</th>
-                        <th>Deceased Name</th>
+                        <th>Deceased</th>
+                        <th>Type</th>
                         <th>Date of Death</th>
-                        <th>Service Type</th>
-                        <th>Status</th>
+                        <th>Service Date</th>
+                        <th>Workflow Status</th>
+                        <th>Director</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>001</td>
-                        <td>John Doe</td>
-                        <td>2025-11-25</td>
-                        <td>Full Service</td>
-                        <td><span class="label label-warning">In Progress</span></td>
+                        <td><input type="checkbox" class="case-checkbox"></td>
+                        <td><a href="#" data-toggle="modal" data-target="#caseDetailModal">FP-2025-001</a></td>
                         <td>
-                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
-                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
-                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                          <img src="https://via.placeholder.com/30x30" class="img-circle" alt="Photo"> 
+                          <strong>John Doe</strong>
+                          <br><small class="text-muted">Next of Kin: Mary Doe</small>
+                        </td>
+                        <td><span class="label label-success">At-Need</span></td>
+                        <td>Nov 25, 2025</td>
+                        <td>Nov 30, 2025</td>
+                        <td>
+                          <div class="progress progress-xs" style="margin-bottom: 5px;">
+                            <div class="progress-bar progress-bar-primary" style="width: 60%"></div>
+                          </div>
+                          <small>Dressing (Step 3/5)</small>
+                        </td>
+                        <td>James Wilson</td>
+                        <td>
+                          <div class="btn-group">
+                            <button class="btn btn-info btn-xs" title="View Case" data-toggle="modal" data-target="#caseDetailModal"><i class="fa fa-eye"></i></button>
+                            <button class="btn btn-primary btn-xs" title="Edit"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-success btn-xs" title="Digital Signature" data-toggle="modal" data-target="#signatureModal"><i class="fa fa-pencil-square-o"></i></button>
+                            <button class="btn btn-warning btn-xs" title="Print Forms"><i class="fa fa-print"></i></button>
+                            <button class="btn btn-danger btn-xs" title="Delete"><i class="fa fa-trash"></i></button>
+                          </div>
                         </td>
                       </tr>
                       <tr>
-                        <td>002</td>
-                        <td>Jane Smith</td>
-                        <td>2025-11-26</td>
-                        <td>Cremation</td>
-                        <td><span class="label label-success">Completed</span></td>
+                        <td><input type="checkbox" class="case-checkbox"></td>
+                        <td><a href="#">FP-2025-002</a></td>
                         <td>
-                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
-                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
-                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                          <img src="https://via.placeholder.com/30x30" class="img-circle" alt="Photo"> 
+                          <strong>Jane Smith</strong>
+                          <br><small class="text-muted">Next of Kin: Robert Smith</small>
+                        </td>
+                        <td><span class="label label-success">At-Need</span></td>
+                        <td>Nov 26, 2025</td>
+                        <td>Dec 1, 2025</td>
+                        <td>
+                          <div class="progress progress-xs" style="margin-bottom: 5px;">
+                            <div class="progress-bar progress-bar-success" style="width: 100%"></div>
+                          </div>
+                          <small>Completed</small>
+                        </td>
+                        <td>Sarah Davis</td>
+                        <td>
+                          <div class="btn-group">
+                            <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-success btn-xs"><i class="fa fa-pencil-square-o"></i></button>
+                            <button class="btn btn-warning btn-xs"><i class="fa fa-print"></i></button>
+                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" class="case-checkbox"></td>
+                        <td><a href="#">FP-2025-003</a></td>
+                        <td>
+                          <img src="https://via.placeholder.com/30x30" class="img-circle" alt="Photo"> 
+                          <strong>Robert Williams</strong>
+                          <br><small class="text-muted">Next of Kin: Linda Williams</small>
+                        </td>
+                        <td><span class="label label-warning">Pre-Need</span></td>
+                        <td>-</td>
+                        <td>Dec 5, 2025</td>
+                        <td>
+                          <div class="progress progress-xs" style="margin-bottom: 5px;">
+                            <div class="progress-bar progress-bar-warning" style="width: 20%"></div>
+                          </div>
+                          <small>Arrangement Conference</small>
+                        </td>
+                        <td>James Wilson</td>
+                        <td>
+                          <div class="btn-group">
+                            <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-success btn-xs"><i class="fa fa-pencil-square-o"></i></button>
+                            <button class="btn btn-warning btn-xs"><i class="fa fa-print"></i></button>
+                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
                   </table>
+                </div>
+                <div class="box-footer">
+                  <div class="pull-left">
+                    <button class="btn btn-default btn-sm" disabled><i class="fa fa-print"></i> Print Selected</button>
+                    <button class="btn btn-default btn-sm" disabled><i class="fa fa-download"></i> Export Selected</button>
+                  </div>
+                  <div class="pull-right">
+                    <span class="text-muted">Showing 1-3 of 13 cases</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Client & Family Records Tab -->
+        <!-- Arrangements & Pricing Tab -->
+        <div id="arrangements-pricing" class="tab-content-section">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-money"></i> General Price List (GPL)</h3>
+                  <span class="ftc-badge">FTC Compliant</span>
+                </div>
+                <div class="box-body">
+                  <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#tab_services" data-toggle="tab">Professional Services</a></li>
+                      <li><a href="#tab_caskets" data-toggle="tab">Caskets</a></li>
+                      <li><a href="#tab_urns" data-toggle="tab">Urns</a></li>
+                      <li><a href="#tab_vaults" data-toggle="tab">Outer Burial Containers</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="tab_services">
+                        <table class="table table-bordered price-list-table">
+                          <thead>
+                            <tr>
+                              <th>Service</th>
+                              <th>Description</th>
+                              <th>Price</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><strong>Basic Services of Funeral Director & Staff</strong></td>
+                              <td>Arrangement conference, coordination, preparation of documents</td>
+                              <td>$2,195.00</td>
+                              <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td><strong>Embalming</strong></td>
+                              <td>Preparation and embalming of remains</td>
+                              <td>$795.00</td>
+                              <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td><strong>Other Preparation of Body</strong></td>
+                              <td>Washing, dressing, cosmetic application</td>
+                              <td>$295.00</td>
+                              <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td><strong>Use of Facilities for Viewing</strong></td>
+                              <td>Per day visitation</td>
+                              <td>$495.00</td>
+                              <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td><strong>Use of Facilities for Funeral Ceremony</strong></td>
+                              <td>Chapel service</td>
+                              <td>$595.00</td>
+                              <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td><strong>Transfer of Remains</strong></td>
+                              <td>Local transfer within 50 miles</td>
+                              <td>$395.00</td>
+                              <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td><strong>Hearse</strong></td>
+                              <td>Local service</td>
+                              <td>$350.00</td>
+                              <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td><strong>Direct Cremation</strong></td>
+                              <td>Without ceremony</td>
+                              <td>$1,495.00</td>
+                              <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="tab_caskets">
+                        <table class="table table-bordered price-list-table">
+                          <thead>
+                            <tr>
+                              <th>Casket</th>
+                              <th>Material</th>
+                              <th>Interior</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Oak Heritage</td>
+                              <td>Solid Oak</td>
+                              <td>Velvet Rosetan</td>
+                              <td>$4,295.00</td>
+                            </tr>
+                            <tr>
+                              <td>Mahogany Classic</td>
+                              <td>Solid Mahogany</td>
+                              <td>Crepe Eggshell</td>
+                              <td>$5,995.00</td>
+                            </tr>
+                            <tr>
+                              <td>Bronze Elite</td>
+                              <td>32 oz Bronze</td>
+                              <td>Velvet Blue</td>
+                              <td>$8,495.00</td>
+                            </tr>
+                            <tr>
+                              <td>Steel Standard</td>
+                              <td>20 Gauge Steel</td>
+                              <td>Crepe White</td>
+                              <td>$2,195.00</td>
+                            </tr>
+                            <tr>
+                              <td>Poplar Economy</td>
+                              <td>Solid Poplar</td>
+                              <td>Crepe Ivory</td>
+                              <td>$1,295.00</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="tab_urns">
+                        <table class="table table-bordered price-list-table">
+                          <thead>
+                            <tr>
+                              <th>Urn</th>
+                              <th>Material</th>
+                              <th>Capacity</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Classic Brass</td>
+                              <td>Solid Brass</td>
+                              <td>200 cu in</td>
+                              <td>$295.00</td>
+                            </tr>
+                            <tr>
+                              <td>Walnut Memory</td>
+                              <td>Walnut Wood</td>
+                              <td>200 cu in</td>
+                              <td>$395.00</td>
+                            </tr>
+                            <tr>
+                              <td>Marble Serenity</td>
+                              <td>Natural Marble</td>
+                              <td>220 cu in</td>
+                              <td>$495.00</td>
+                            </tr>
+                            <tr>
+                              <td>Biodegradable</td>
+                              <td>Recycled Paper</td>
+                              <td>200 cu in</td>
+                              <td>$125.00</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="tab_vaults">
+                        <table class="table table-bordered price-list-table">
+                          <thead>
+                            <tr>
+                              <th>Vault/Container</th>
+                              <th>Material</th>
+                              <th>Warranty</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Concrete Basic</td>
+                              <td>Reinforced Concrete</td>
+                              <td>None</td>
+                              <td>$995.00</td>
+                            </tr>
+                            <tr>
+                              <td>Concrete Lined</td>
+                              <td>Concrete with ABS Liner</td>
+                              <td>50 Years</td>
+                              <td>$1,495.00</td>
+                            </tr>
+                            <tr>
+                              <td>Steel Vault</td>
+                              <td>12 Gauge Steel</td>
+                              <td>75 Years</td>
+                              <td>$2,995.00</td>
+                            </tr>
+                            <tr>
+                              <td>Bronze Vault</td>
+                              <td>32 oz Bronze</td>
+                              <td>Lifetime</td>
+                              <td>$5,995.00</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <!-- Package Builder -->
+              <div class="box box-success">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-shopping-cart"></i> Package Builder</h3>
+                </div>
+                <div class="box-body">
+                  <h5><strong>Current Estimate - Doe Family</strong></h5>
+                  <hr>
+                  <table class="table table-condensed">
+                    <tbody>
+                      <tr>
+                        <td>Basic Services</td>
+                        <td class="text-right">$2,195.00</td>
+                      </tr>
+                      <tr>
+                        <td>Embalming</td>
+                        <td class="text-right">$795.00</td>
+                      </tr>
+                      <tr>
+                        <td>Viewing (1 day)</td>
+                        <td class="text-right">$495.00</td>
+                      </tr>
+                      <tr>
+                        <td>Funeral Service</td>
+                        <td class="text-right">$595.00</td>
+                      </tr>
+                      <tr>
+                        <td>Oak Heritage Casket</td>
+                        <td class="text-right">$4,295.00</td>
+                      </tr>
+                      <tr>
+                        <td>Concrete Lined Vault</td>
+                        <td class="text-right">$1,495.00</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr class="info">
+                        <th>Subtotal</th>
+                        <th class="text-right">$9,870.00</th>
+                      </tr>
+                      <tr>
+                        <td>Cash Advances (Est.)</td>
+                        <td class="text-right">$1,200.00</td>
+                      </tr>
+                      <tr class="success">
+                        <th>Total</th>
+                        <th class="text-right">$11,070.00</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                  <button class="btn btn-primary btn-block"><i class="fa fa-file-text"></i> Generate Contract</button>
+                  <button class="btn btn-success btn-block"><i class="fa fa-print"></i> Print Estimate</button>
+                </div>
+              </div>
+
+              <!-- Pre-Arranged Packages -->
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-gift"></i> Service Packages</h3>
+                </div>
+                <div class="box-body">
+                  <div class="list-group">
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading">Traditional Full Service</h4>
+                      <p class="list-group-item-text">Complete funeral with viewing, ceremony, and burial</p>
+                      <span class="badge bg-green">$7,995</span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading">Cremation with Memorial</h4>
+                      <p class="list-group-item-text">Cremation with memorial service</p>
+                      <span class="badge bg-yellow">$3,995</span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading">Direct Cremation</h4>
+                      <p class="list-group-item-text">Simple cremation without services</p>
+                      <span class="badge bg-aqua">$1,495</span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading">Graveside Service Only</h4>
+                      <p class="list-group-item-text">Simple graveside ceremony</p>
+                      <span class="badge bg-red">$2,995</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CRM & Family Communication Tab (Enhanced Client Records) -->
         <div id="client-records" class="tab-content-section">
           <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
+            <div class="col-md-8">
+              <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Client & Family Records</h3>
+                  <h3 class="box-title"><i class="fa fa-users"></i> Family & Client Records</h3>
                   <div class="box-tools pull-right">
                     <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addClientModal">
                       <i class="fa fa-plus"></i> Add New Client
@@ -302,41 +1294,467 @@
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Email</th>
-                        <th>Relationship</th>
+                        <th>Related Case</th>
+                        <th>Portal Access</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>C001</td>
-                        <td>Mary Doe</td>
+                        <td><strong>Mary Doe</strong><br><small class="text-muted">Spouse</small></td>
                         <td>(555) 123-4567</td>
                         <td>mary.doe@email.com</td>
-                        <td>Spouse</td>
+                        <td><a href="#">FP-2025-001</a></td>
+                        <td><span class="label label-success">Active</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs" title="View"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs" title="Edit"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-warning btn-xs" title="Send Message"><i class="fa fa-envelope"></i></button>
+                          <button class="btn btn-success btn-xs" title="Portal Link"><i class="fa fa-link"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>C002</td>
+                        <td><strong>Robert Smith</strong><br><small class="text-muted">Son</small></td>
+                        <td>(555) 234-5678</td>
+                        <td>robert.smith@email.com</td>
+                        <td><a href="#">FP-2025-002</a></td>
+                        <td><span class="label label-warning">Pending</span></td>
                         <td>
                           <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
                           <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
-                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                          <button class="btn btn-warning btn-xs"><i class="fa fa-envelope"></i></button>
+                          <button class="btn btn-success btn-xs"><i class="fa fa-link"></i></button>
                         </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
+
+              <!-- Automated Communications -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-send"></i> Automated Communications</h3>
+                </div>
+                <div class="box-body">
+                  <table class="table table-condensed">
+                    <thead>
+                      <tr>
+                        <th>Template</th>
+                        <th>Type</th>
+                        <th>Trigger</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Arrival Notification</td>
+                        <td><i class="fa fa-envelope text-primary"></i> Email / <i class="fa fa-mobile text-success"></i> SMS</td>
+                        <td>When remains arrive</td>
+                        <td><span class="label label-success">Active</span></td>
+                        <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td>Visitation Reminder</td>
+                        <td><i class="fa fa-envelope text-primary"></i> Email / <i class="fa fa-mobile text-success"></i> SMS</td>
+                        <td>24 hours before</td>
+                        <td><span class="label label-success">Active</span></td>
+                        <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td>Service Reminder</td>
+                        <td><i class="fa fa-envelope text-primary"></i> Email / <i class="fa fa-mobile text-success"></i> SMS</td>
+                        <td>1 hour before</td>
+                        <td><span class="label label-success">Active</span></td>
+                        <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td>Thank You Card</td>
+                        <td><i class="fa fa-envelope text-primary"></i> Email</td>
+                        <td>1 week after service</td>
+                        <td><span class="label label-success">Active</span></td>
+                        <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td>Review Request</td>
+                        <td><i class="fa fa-envelope text-primary"></i> Email</td>
+                        <td>2 weeks after service</td>
+                        <td><span class="label label-warning">Draft</span></td>
+                        <td><button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <!-- Memorial Website Builder -->
+              <div class="box box-success">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-globe"></i> Memorial Website Builder</h3>
+                </div>
+                <div class="box-body">
+                  <div class="memorial-preview">
+                    <img src="https://via.placeholder.com/120x120" class="deceased-photo" alt="Memorial Photo">
+                    <h4>John Doe</h4>
+                    <p class="text-muted">1945 - 2025</p>
+                    <p><em>"Forever in our hearts"</em></p>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <label>Memorial Page URL</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" value="tribute.funeralparlor.com/john-doe" readonly>
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><i class="fa fa-copy"></i></button>
+                      </span>
+                    </div>
+                  </div>
+                  <button class="btn btn-success btn-block"><i class="fa fa-globe"></i> Publish Memorial Page</button>
+                  <button class="btn btn-primary btn-block"><i class="fa fa-edit"></i> Edit Content</button>
+                  <hr>
+                  <h5>Page Features</h5>
+                  <div class="checkbox"><label><input type="checkbox" checked> Obituary</label></div>
+                  <div class="checkbox"><label><input type="checkbox" checked> Photo Gallery</label></div>
+                  <div class="checkbox"><label><input type="checkbox" checked> Guestbook</label></div>
+                  <div class="checkbox"><label><input type="checkbox" checked> Flower Delivery</label></div>
+                  <div class="checkbox"><label><input type="checkbox" checked> Donation Link</label></div>
+                  <div class="checkbox"><label><input type="checkbox"> Live Stream</label></div>
+                </div>
+              </div>
+
+              <!-- Family Portal Status -->
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-user-circle"></i> Family Portal</h3>
+                </div>
+                <div class="box-body">
+                  <p><strong>Active Portals:</strong> 12</p>
+                  <p><strong>Pending Invitations:</strong> 3</p>
+                  <hr>
+                  <h5>Portal Features</h5>
+                  <ul class="list-unstyled">
+                    <li><i class="fa fa-check text-success"></i> View case updates</li>
+                    <li><i class="fa fa-check text-success"></i> Sign documents digitally</li>
+                    <li><i class="fa fa-check text-success"></i> Make payments online</li>
+                    <li><i class="fa fa-check text-success"></i> Upload photos</li>
+                    <li><i class="fa fa-check text-success"></i> Chat with director</li>
+                  </ul>
+                  <button class="btn btn-warning btn-block"><i class="fa fa-send"></i> Send Portal Invites</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Inventory Tracking Tab -->
+        <!-- Accounting & Payments Tab -->
+        <div id="accounting" class="tab-content-section">
+          <div class="row">
+            <!-- Financial Summary -->
+            <div class="col-md-3">
+              <div class="info-box bg-green">
+                <span class="info-box-icon"><i class="fa fa-dollar"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">This Month</span>
+                  <span class="info-box-number">$45,200</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-aqua">
+                <span class="info-box-icon"><i class="fa fa-check"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Payments Received</span>
+                  <span class="info-box-number">$32,150</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-yellow">
+                <span class="info-box-icon"><i class="fa fa-clock-o"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Pending</span>
+                  <span class="info-box-number">$13,050</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-red">
+                <span class="info-box-icon"><i class="fa fa-exclamation"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Overdue</span>
+                  <span class="info-box-number">$2,400</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <!-- Invoices -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-file-text-o"></i> Invoices & Payments</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-success btn-sm"><i class="fa fa-plus"></i> New Invoice</button>
+                    <button class="btn btn-info btn-sm"><i class="fa fa-credit-card"></i> Record Payment</button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Invoice #</th>
+                        <th>Case</th>
+                        <th>Family</th>
+                        <th>Amount</th>
+                        <th>Paid</th>
+                        <th>Balance</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>INV-2025-001</td>
+                        <td>FP-2025-001</td>
+                        <td>Doe Family</td>
+                        <td>$11,070.00</td>
+                        <td>$5,000.00</td>
+                        <td>$6,070.00</td>
+                        <td><span class="label label-warning">Partial</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-xs btn-success"><i class="fa fa-credit-card"></i></button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-print"></i></button>
+                          <button class="btn btn-xs btn-warning"><i class="fa fa-envelope"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>INV-2025-002</td>
+                        <td>FP-2025-002</td>
+                        <td>Smith Family</td>
+                        <td>$8,450.00</td>
+                        <td>$8,450.00</td>
+                        <td>$0.00</td>
+                        <td><span class="label label-success">Paid</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-xs btn-success" disabled><i class="fa fa-credit-card"></i></button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-print"></i></button>
+                          <button class="btn btn-xs btn-warning"><i class="fa fa-envelope"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>INV-2025-003</td>
+                        <td>FP-2025-003</td>
+                        <td>Williams Family</td>
+                        <td>$7,500.00</td>
+                        <td>$0.00</td>
+                        <td>$7,500.00</td>
+                        <td><span class="label label-danger">Overdue</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-xs btn-success"><i class="fa fa-credit-card"></i></button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-print"></i></button>
+                          <button class="btn btn-xs btn-warning"><i class="fa fa-envelope"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Recent Transactions -->
+              <div class="box box-success">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-exchange"></i> Recent Transactions</h3>
+                </div>
+                <div class="box-body">
+                  <table class="table table-condensed">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Method</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Nov 30, 2025</td>
+                        <td>Payment - Doe Family (INV-2025-001)</td>
+                        <td><i class="fa fa-credit-card"></i> Visa ****4242</td>
+                        <td class="text-success">+$2,500.00</td>
+                        <td><span class="label label-success">Completed</span></td>
+                      </tr>
+                      <tr>
+                        <td>Nov 29, 2025</td>
+                        <td>Payment - Johnson Family</td>
+                        <td><i class="fa fa-money"></i> Cash</td>
+                        <td class="text-success">+$5,200.00</td>
+                        <td><span class="label label-success">Completed</span></td>
+                      </tr>
+                      <tr>
+                        <td>Nov 29, 2025</td>
+                        <td>Payment - Doe Family (INV-2025-001)</td>
+                        <td><i class="fa fa-university"></i> Check #1234</td>
+                        <td class="text-success">+$2,500.00</td>
+                        <td><span class="label label-success">Completed</span></td>
+                      </tr>
+                      <tr>
+                        <td>Nov 28, 2025</td>
+                        <td>Payment Plan Setup - Martinez Family</td>
+                        <td><i class="fa fa-calendar"></i> 0% Financing</td>
+                        <td class="text-info">$6,000.00</td>
+                        <td><span class="label label-info">Active</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <!-- Payment Processing -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-credit-card"></i> Process Payment</h3>
+                </div>
+                <div class="box-body">
+                  <form>
+                    <div class="form-group">
+                      <label>Select Invoice</label>
+                      <select class="form-control">
+                        <option>INV-2025-001 - Doe Family ($6,070 due)</option>
+                        <option>INV-2025-003 - Williams Family ($7,500 due)</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Amount</label>
+                      <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" placeholder="0.00">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Payment Method</label>
+                      <select class="form-control">
+                        <option>Credit Card</option>
+                        <option>Debit Card</option>
+                        <option>Cash</option>
+                        <option>Check</option>
+                        <option>Bank Transfer</option>
+                        <option>0% Family Financing</option>
+                      </select>
+                    </div>
+                    <button type="button" class="btn btn-success btn-block"><i class="fa fa-check"></i> Process Payment</button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- QuickBooks Integration -->
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-plug"></i> Integrations</h3>
+                </div>
+                <div class="box-body">
+                  <div class="list-group">
+                    <a href="#" class="list-group-item">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <strong>QuickBooks Online</strong>
+                      <span class="label label-success pull-right">Connected</span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <i class="fa fa-check-circle text-success"></i>
+                      <strong>Stripe Payments</strong>
+                      <span class="label label-success pull-right">Connected</span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <i class="fa fa-circle-o text-muted"></i>
+                      <strong>Square POS</strong>
+                      <span class="label label-default pull-right">Not Connected</span>
+                    </a>
+                  </div>
+                  <button class="btn btn-primary btn-block"><i class="fa fa-refresh"></i> Sync with QuickBooks</button>
+                </div>
+              </div>
+
+              <!-- Preneed Trust Accounting -->
+              <div class="box box-default">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-lock"></i> Preneed Trust</h3>
+                </div>
+                <div class="box-body">
+                  <p><strong>Total Trust Balance:</strong> <span class="text-success">$125,000</span></p>
+                  <p><strong>Active Contracts:</strong> 15</p>
+                  <p><strong>Pending Maturity:</strong> 2</p>
+                  <hr>
+                  <button class="btn btn-default btn-block"><i class="fa fa-file-text"></i> Trust Report</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enhanced Inventory Management Tab -->
         <div id="inventory" class="tab-content-section">
           <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
+            <!-- Inventory Summary -->
+            <div class="col-md-3">
+              <div class="info-box bg-aqua">
+                <span class="info-box-icon"><i class="fa fa-cubes"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Items</span>
+                  <span class="info-box-number">156</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-green">
+                <span class="info-box-icon"><i class="fa fa-check"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">In Stock</span>
+                  <span class="info-box-number">142</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-yellow">
+                <span class="info-box-icon"><i class="fa fa-warning"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Low Stock</span>
+                  <span class="info-box-number">11</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-red">
+                <span class="info-box-icon"><i class="fa fa-times"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Out of Stock</span>
+                  <span class="info-box-number">3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-9">
+              <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Inventory Tracking</h3>
+                  <h3 class="box-title"><i class="fa fa-cubes"></i> Inventory Management</h3>
                   <div class="box-tools pull-right">
                     <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addInventoryModal">
                       <i class="fa fa-plus"></i> Add Item
+                    </button>
+                    <button type="button" class="btn btn-info btn-sm">
+                      <i class="fa fa-barcode"></i> Scan Barcode
                     </button>
                     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#bulkImportModal" data-import-type="inventory">
                       <i class="fa fa-upload"></i> Bulk Import
@@ -344,43 +1762,94 @@
                   </div>
                 </div>
                 <div class="box-body">
+                  <!-- Category Filter Tabs -->
+                  <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+                    <li class="active"><a href="#" data-category="all">All Items</a></li>
+                    <li><a href="#" data-category="caskets">Caskets</a></li>
+                    <li><a href="#" data-category="urns">Urns</a></li>
+                    <li><a href="#" data-category="vaults">Vaults</a></li>
+                    <li><a href="#" data-category="flowers">Flowers</a></li>
+                    <li><a href="#" data-category="memorial">Memorial Items</a></li>
+                  </ul>
+
                   <table class="table table-bordered table-striped" id="inventoryTable">
                     <thead>
                       <tr>
-                        <th>Item ID</th>
+                        <th style="width: 100px;">Barcode</th>
                         <th>Item Name</th>
                         <th>Category</th>
+                        <th>SKU</th>
                         <th>Quantity</th>
+                        <th>Reorder Level</th>
                         <th>Unit Price</th>
+                        <th>Supplier</th>
                         <th>Status</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>INV001</td>
-                        <td>Oak Casket - Standard</td>
+                        <td><small style="font-family: monospace;">*INV001*</small></td>
+                        <td><strong>Oak Heritage Casket</strong></td>
                         <td>Caskets</td>
-                        <td>15</td>
-                        <td>$2,500.00</td>
+                        <td>CAS-OAK-001</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>$4,295.00</td>
+                        <td>Heritage Casket Co.</td>
                         <td><span class="label label-success">In Stock</span></td>
                         <td>
                           <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
                           <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
-                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                          <button class="btn btn-warning btn-xs"><i class="fa fa-shopping-cart"></i></button>
                         </td>
                       </tr>
                       <tr>
-                        <td>INV002</td>
-                        <td>Memorial Flowers - Arrangement</td>
+                        <td><small style="font-family: monospace;">*INV002*</small></td>
+                        <td><strong>Memorial Flower Arrangement</strong></td>
                         <td>Flowers</td>
-                        <td>3</td>
+                        <td>FLW-MEM-001</td>
+                        <td><span class="low-stock-alert text-danger"><strong>2</strong></span></td>
+                        <td>10</td>
                         <td>$150.00</td>
+                        <td>Garden of Peace Florist</td>
                         <td><span class="label label-warning">Low Stock</span></td>
                         <td>
                           <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
                           <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
-                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                          <button class="btn btn-warning btn-xs"><i class="fa fa-shopping-cart"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><small style="font-family: monospace;">*INV003*</small></td>
+                        <td><strong>Classic Brass Urn</strong></td>
+                        <td>Urns</td>
+                        <td>URN-BRS-001</td>
+                        <td>15</td>
+                        <td>8</td>
+                        <td>$295.00</td>
+                        <td>Eternal Rest Supplies</td>
+                        <td><span class="label label-success">In Stock</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-warning btn-xs"><i class="fa fa-shopping-cart"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><small style="font-family: monospace;">*INV004*</small></td>
+                        <td><strong>Concrete Lined Vault</strong></td>
+                        <td>Vaults</td>
+                        <td>VLT-CON-002</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>$1,495.00</td>
+                        <td>Vault Masters Inc.</td>
+                        <td><span class="label label-danger">Out of Stock</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-warning btn-xs"><i class="fa fa-shopping-cart"></i></button>
                         </td>
                       </tr>
                     </tbody>
@@ -388,67 +1857,943 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-md-3">
+              <!-- Low Stock Alerts -->
+              <div class="box box-danger">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-bell"></i> Low Stock Alerts</h3>
+                </div>
+                <div class="box-body" style="max-height: 300px; overflow-y: auto;">
+                  <div class="callout callout-warning">
+                    <p><strong>Memorial Flowers</strong><br>Only 2 remaining</p>
+                    <button class="btn btn-xs btn-warning">Reorder</button>
+                  </div>
+                  <div class="callout callout-warning">
+                    <p><strong>Prayer Cards</strong><br>Only 50 remaining</p>
+                    <button class="btn btn-xs btn-warning">Reorder</button>
+                  </div>
+                  <div class="callout callout-danger">
+                    <p><strong>Concrete Lined Vault</strong><br>OUT OF STOCK</p>
+                    <button class="btn btn-xs btn-danger">Order Now</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Supplier Price Lists -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-truck"></i> Suppliers</h3>
+                </div>
+                <div class="box-body">
+                  <ul class="list-unstyled">
+                    <li><a href="#"><i class="fa fa-building"></i> Heritage Casket Co.</a></li>
+                    <li><a href="#"><i class="fa fa-building"></i> Eternal Rest Supplies</a></li>
+                    <li><a href="#"><i class="fa fa-building"></i> Garden of Peace Florist</a></li>
+                    <li><a href="#"><i class="fa fa-building"></i> Vault Masters Inc.</a></li>
+                  </ul>
+                  <hr>
+                  <button class="btn btn-primary btn-block btn-sm"><i class="fa fa-download"></i> Download Price Lists</button>
+                  <button class="btn btn-success btn-block btn-sm"><i class="fa fa-plus"></i> Add Supplier</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Scheduling & Appointments Tab -->
+        <!-- Calendar & Scheduling Tab (Enhanced) -->
         <div id="scheduling" class="tab-content-section">
           <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
+            <div class="col-md-9">
+              <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Scheduling & Appointments</h3>
+                  <h3 class="box-title"><i class="fa fa-calendar"></i> Calendar & Scheduling</h3>
                   <div class="box-tools pull-right">
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                      <button class="btn btn-default btn-sm">Today</button>
+                      <button class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                    </div>
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm active">Week</button>
+                      <button class="btn btn-default btn-sm">Month</button>
+                      <button class="btn btn-default btn-sm">Day</button>
+                    </div>
                     <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addAppointmentModal">
-                      <i class="fa fa-plus"></i> Add Appointment
-                    </button>
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#bulkImportModal" data-import-type="appointments">
-                      <i class="fa fa-upload"></i> Bulk Import
+                      <i class="fa fa-plus"></i> New Event
                     </button>
                   </div>
                 </div>
                 <div class="box-body">
-                  <table class="table table-bordered table-striped" id="appointmentsTable">
+                  <h4 class="text-center">November 30 - December 6, 2025</h4>
+                  <table class="table table-bordered" style="table-layout: fixed;">
+                    <thead>
+                      <tr class="bg-primary">
+                        <th style="width: 80px;">Time</th>
+                        <th>Sun 30</th>
+                        <th>Mon 1</th>
+                        <th>Tue 2</th>
+                        <th>Wed 3</th>
+                        <th>Thu 4</th>
+                        <th>Fri 5</th>
+                        <th>Sat 6</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>9:00 AM</strong></td>
+                        <td class="bg-info"><small><strong>Visitation</strong><br>John Doe<br>Chapel A</small></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-warning"><small><strong>Arrangement</strong><br>Garcia Family<br>Room 1</small></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><strong>10:00 AM</strong></td>
+                        <td></td>
+                        <td class="bg-warning"><small><strong>Funeral</strong><br>Anderson<br>Main Chapel</small></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-info"><small><strong>Visitation</strong><br>Lee Family<br>Chapel B</small></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><strong>11:00 AM</strong></td>
+                        <td class="bg-warning"><small><strong>Funeral</strong><br>Mary Johnson<br>Main Chapel</small></td>
+                        <td></td>
+                        <td class="bg-success"><small><strong>Graveside</strong><br>Martinez<br>Oak Cemetery</small></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-warning"><small><strong>Funeral</strong><br>Thompson<br>Chapel A</small></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><strong>12:00 PM</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><strong>1:00 PM</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><strong>2:00 PM</strong></td>
+                        <td class="bg-success"><small><strong>Graveside</strong><br>Williams<br>Oak Cemetery</small></td>
+                        <td class="bg-info"><small><strong>Visitation</strong><br>Thompson<br>Chapel A</small></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-info"><small><strong>Visitation</strong><br>Roberts<br>Chapel B</small></td>
+                      </tr>
+                      <tr>
+                        <td><strong>3:00 PM</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-danger"><small><strong>Cremation</strong><br>Lee Family<br>Crematory</small></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><strong>4:00 PM</strong></td>
+                        <td class="bg-danger"><small><strong>Cremation</strong><br>Brown<br>Crematory</small></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-info"><small><strong>Visitation</strong><br>Garcia<br>Chapel A</small></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="box-footer">
+                  <span class="label label-info">Visitation</span>
+                  <span class="label label-warning">Funeral</span>
+                  <span class="label label-success">Graveside</span>
+                  <span class="label label-danger">Cremation</span>
+                  <button class="btn btn-default btn-sm pull-right"><i class="fa fa-google"></i> Sync with Google Calendar</button>
+                  <button class="btn btn-default btn-sm pull-right" style="margin-right: 5px;"><i class="fa fa-windows"></i> Sync with Outlook</button>
+                </div>
+              </div>
+
+              <!-- Today's Schedule Details -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-clock-o"></i> Today's Schedule - November 30, 2025</h3>
+                </div>
+                <div class="box-body">
+                  <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th>Appointment ID</th>
-                        <th>Client Name</th>
-                        <th>Type</th>
-                        <th>Date</th>
                         <th>Time</th>
+                        <th>Event</th>
+                        <th>Case</th>
+                        <th>Location</th>
+                        <th>Staff Assigned</th>
                         <th>Status</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>APT001</td>
-                        <td>Mary Doe</td>
-                        <td>Arrangement Meeting</td>
-                        <td>2025-11-30</td>
-                        <td>10:00 AM</td>
-                        <td><span class="label label-info">Scheduled</span></td>
+                        <td>9:00 AM</td>
+                        <td><span class="label label-info">Visitation</span></td>
+                        <td>John Doe (FP-2025-001)</td>
+                        <td>Chapel A</td>
+                        <td>James Wilson, Sarah Davis</td>
+                        <td><span class="label label-success">In Progress</span></td>
                         <td>
-                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
-                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
-                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button>
                         </td>
                       </tr>
                       <tr>
-                        <td>APT002</td>
-                        <td>Robert Smith</td>
-                        <td>Memorial Service</td>
-                        <td>2025-12-01</td>
-                        <td>2:00 PM</td>
-                        <td><span class="label label-warning">Pending Confirmation</span></td>
+                        <td>11:00 AM</td>
+                        <td><span class="label label-warning">Funeral</span></td>
+                        <td>Mary Johnson (FP-2025-002)</td>
+                        <td>Main Chapel</td>
+                        <td>James Wilson, Michael Chen</td>
+                        <td><span class="label label-primary">Scheduled</span></td>
                         <td>
-                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
-                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
-                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2:00 PM</td>
+                        <td><span class="label label-success">Graveside</span></td>
+                        <td>Robert Williams (FP-2025-003)</td>
+                        <td>Oak Cemetery</td>
+                        <td>James Wilson</td>
+                        <td><span class="label label-primary">Scheduled</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4:00 PM</td>
+                        <td><span class="label label-danger">Cremation</span></td>
+                        <td>Elizabeth Brown (FP-2025-004)</td>
+                        <td>Crematory</td>
+                        <td>Michael Chen</td>
+                        <td><span class="label label-warning">Pending</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button>
                         </td>
                       </tr>
                     </tbody>
                   </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <!-- Facility/Room Availability -->
+              <div class="box box-success">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-building"></i> Facility Status</h3>
+                </div>
+                <div class="box-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <span class="label label-danger pull-right">In Use</span>
+                      <strong>Main Chapel</strong>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="label label-danger pull-right">In Use</span>
+                      <strong>Chapel A</strong>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="label label-success pull-right">Available</span>
+                      <strong>Chapel B</strong>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="label label-success pull-right">Available</span>
+                      <strong>Arrangement Room 1</strong>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="label label-success pull-right">Available</span>
+                      <strong>Arrangement Room 2</strong>
+                    </li>
+                    <li class="list-group-item">
+                      <span class="label label-warning pull-right">Reserved 4PM</span>
+                      <strong>Crematory</strong>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Staff Availability -->
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-users"></i> Staff On Duty</h3>
+                </div>
+                <div class="box-body">
+                  <ul class="list-unstyled">
+                    <li style="padding: 5px 0;"><i class="fa fa-user text-success"></i> James Wilson <small class="text-muted">(Director)</small></li>
+                    <li style="padding: 5px 0;"><i class="fa fa-user text-success"></i> Sarah Davis <small class="text-muted">(Director)</small></li>
+                    <li style="padding: 5px 0;"><i class="fa fa-user text-success"></i> Michael Chen <small class="text-muted">(Embalmer)</small></li>
+                    <li style="padding: 5px 0;"><i class="fa fa-user text-warning"></i> Lisa Anderson <small class="text-muted">(On Call)</small></li>
+                  </ul>
+                  <hr>
+                  <button class="btn btn-default btn-block btn-sm"><i class="fa fa-calendar"></i> View Staff Schedule</button>
+                </div>
+              </div>
+
+              <!-- Conflict Alerts -->
+              <div class="box box-danger">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-warning"></i> Conflicts</h3>
+                </div>
+                <div class="box-body">
+                  <div class="callout callout-danger">
+                    <p><strong>Dec 5, 2:00 PM</strong></p>
+                    <p><small>Chapel A double-booked</small></p>
+                    <button class="btn btn-xs btn-danger">Resolve</button>
+                  </div>
+                  <p class="text-muted text-center"><i class="fa fa-check-circle text-success"></i> No other conflicts</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forms & Compliance Tab -->
+        <div id="forms-compliance" class="tab-content-section">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-file-text"></i> Forms & Documents</h3>
+                </div>
+                <div class="box-body">
+                  <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#tab_death_cert" data-toggle="tab">Death Certificates</a></li>
+                      <li><a href="#tab_auth" data-toggle="tab">Authorizations</a></li>
+                      <li><a href="#tab_reports" data-toggle="tab">Reports & Logs</a></li>
+                      <li><a href="#tab_contracts" data-toggle="tab">Contracts</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="tab_death_cert">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Case</th>
+                              <th>Deceased</th>
+                              <th>Worksheet Status</th>
+                              <th>EDRS Status</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>FP-2025-001</td>
+                              <td>John Doe</td>
+                              <td><span class="label label-success">Complete</span></td>
+                              <td><span class="label label-warning">Pending Review</span></td>
+                              <td>
+                                <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i> View</button>
+                                <button class="btn btn-xs btn-primary"><i class="fa fa-upload"></i> Submit EDRS</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>FP-2025-002</td>
+                              <td>Jane Smith</td>
+                              <td><span class="label label-success">Complete</span></td>
+                              <td><span class="label label-success">Filed</span></td>
+                              <td>
+                                <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i> View</button>
+                                <button class="btn btn-xs btn-success"><i class="fa fa-download"></i> Download</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>FP-2025-003</td>
+                              <td>Robert Williams</td>
+                              <td><span class="label label-warning">In Progress</span></td>
+                              <td><span class="label label-default">Not Started</span></td>
+                              <td>
+                                <button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Complete</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <button class="btn btn-success"><i class="fa fa-plus"></i> New Death Certificate Worksheet</button>
+                      </div>
+                      <div class="tab-pane" id="tab_auth">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Document</th>
+                              <th>Case</th>
+                              <th>Status</th>
+                              <th>Signed By</th>
+                              <th>Date</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Cremation Authorization</td>
+                              <td>FP-2025-004</td>
+                              <td><span class="label label-success">Signed</span></td>
+                              <td>Michael Brown</td>
+                              <td>Nov 29, 2025</td>
+                              <td><button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td>Embalming Authorization</td>
+                              <td>FP-2025-001</td>
+                              <td><span class="label label-success">Signed</span></td>
+                              <td>Mary Doe</td>
+                              <td>Nov 28, 2025</td>
+                              <td><button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td>Burial Authorization</td>
+                              <td>FP-2025-003</td>
+                              <td><span class="label label-warning">Pending Signature</span></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td><button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> Request Signature</button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="tab_reports">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Report Type</th>
+                              <th>Case</th>
+                              <th>Date</th>
+                              <th>Staff</th>
+                              <th>Status</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Embalming Report</td>
+                              <td>FP-2025-001</td>
+                              <td>Nov 26, 2025</td>
+                              <td>Michael Chen</td>
+                              <td><span class="label label-success">Complete</span></td>
+                              <td><button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td>Refrigeration Log</td>
+                              <td>FP-2025-003</td>
+                              <td>Nov 28, 2025</td>
+                              <td>Sarah Davis</td>
+                              <td><span class="label label-success">Complete</span></td>
+                              <td><button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td>Cremation Temperature Log</td>
+                              <td>FP-2025-002</td>
+                              <td>Nov 27, 2025</td>
+                              <td>Michael Chen</td>
+                              <td><span class="label label-success">Complete</span></td>
+                              <td><button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="tab_contracts">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Contract</th>
+                              <th>Case</th>
+                              <th>Family</th>
+                              <th>Amount</th>
+                              <th>Status</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Funeral Service Agreement</td>
+                              <td>FP-2025-001</td>
+                              <td>Doe Family</td>
+                              <td>$11,070.00</td>
+                              <td><span class="label label-success">Signed</span></td>
+                              <td><button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td>Pre-Need Agreement</td>
+                              <td>FP-2025-005</td>
+                              <td>Martinez Family</td>
+                              <td>$8,500.00</td>
+                              <td><span class="label label-warning">Pending</span></td>
+                              <td><button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <!-- State-Specific Forms -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-file-o"></i> Form Templates</h3>
+                </div>
+                <div class="box-body">
+                  <div class="form-group">
+                    <label>Select State</label>
+                    <select class="form-control">
+                      <option>California</option>
+                      <option>New York</option>
+                      <option>Texas</option>
+                      <option>Florida</option>
+                      <option>Pennsylvania</option>
+                    </select>
+                  </div>
+                  <hr>
+                  <ul class="list-unstyled">
+                    <li><a href="#"><i class="fa fa-file-pdf-o text-danger"></i> Death Certificate Worksheet</a></li>
+                    <li><a href="#"><i class="fa fa-file-pdf-o text-danger"></i> Cremation Authorization</a></li>
+                    <li><a href="#"><i class="fa fa-file-pdf-o text-danger"></i> Burial Transit Permit</a></li>
+                    <li><a href="#"><i class="fa fa-file-pdf-o text-danger"></i> Embalming Report</a></li>
+                    <li><a href="#"><i class="fa fa-file-pdf-o text-danger"></i> Refrigeration Log</a></li>
+                    <li><a href="#"><i class="fa fa-file-pdf-o text-danger"></i> Statement of Goods & Services</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- EDRS Integration -->
+              <div class="box box-success">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-cloud-upload"></i> EDRS Integration</h3>
+                </div>
+                <div class="box-body">
+                  <div class="callout callout-success">
+                    <h4>Electronic Death Registration</h4>
+                    <p>Connected to state EDRS system</p>
+                  </div>
+                  <p><strong>Pending Submissions:</strong> 2</p>
+                  <p><strong>Filed This Month:</strong> 8</p>
+                  <p><strong>Rejected (Action Required):</strong> <span class="text-danger">1</span></p>
+                  <hr>
+                  <button class="btn btn-success btn-block"><i class="fa fa-refresh"></i> Sync with EDRS</button>
+                </div>
+              </div>
+
+              <!-- Compliance Status -->
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-check-square"></i> Compliance Status</h3>
+                </div>
+                <div class="box-body">
+                  <ul class="list-unstyled">
+                    <li><i class="fa fa-check-circle text-success"></i> FTC Rule Compliance</li>
+                    <li><i class="fa fa-check-circle text-success"></i> GPL Current</li>
+                    <li><i class="fa fa-check-circle text-success"></i> Casket Price List Current</li>
+                    <li><i class="fa fa-check-circle text-success"></i> OSHA Training Complete</li>
+                    <li><i class="fa fa-warning text-warning"></i> License Renewal: 30 days</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crematory Module Tab -->
+        <div id="crematory" class="tab-content-section">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="box box-danger">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-fire"></i> Crematory Operations</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Schedule Cremation</button>
+                    <button class="btn btn-info btn-sm"><i class="fa fa-barcode"></i> Scan ID Band</button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>ID Band</th>
+                        <th>Deceased</th>
+                        <th>Case #</th>
+                        <th>Scheduled</th>
+                        <th>Status</th>
+                        <th>Temp (°F)</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="warning">
+                        <td><code>CRM-2025-042</code></td>
+                        <td>Elizabeth Brown</td>
+                        <td>FP-2025-004</td>
+                        <td>Nov 30, 4:00 PM</td>
+                        <td><span class="label label-warning">Scheduled</span></td>
+                        <td>-</td>
+                        <td>
+                          <button class="btn btn-xs btn-success"><i class="fa fa-play"></i> Start</button>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="success">
+                        <td><code>CRM-2025-041</code></td>
+                        <td>Jane Smith</td>
+                        <td>FP-2025-002</td>
+                        <td>Nov 29, 2:00 PM</td>
+                        <td><span class="label label-success">Complete</span></td>
+                        <td>1,800</td>
+                        <td>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-file-text"></i> Log</button>
+                        </td>
+                      </tr>
+                      <tr class="info">
+                        <td><code>CRM-2025-043</code></td>
+                        <td>Thomas Lee</td>
+                        <td>FP-2025-006</td>
+                        <td>Dec 2, 3:00 PM</td>
+                        <td><span class="label label-info">Pending Authorization</span></td>
+                        <td>-</td>
+                        <td>
+                          <button class="btn btn-xs btn-warning"><i class="fa fa-file-text"></i> Get Auth</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Chain of Custody Tracking -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-link"></i> Chain of Custody - Elizabeth Brown (CRM-2025-042)</h3>
+                </div>
+                <div class="box-body">
+                  <div class="custody-timeline">
+                    <div class="custody-step verified">
+                      <strong>Received at Facility</strong><br>
+                      <small class="text-muted">Nov 28, 2025 - 10:30 AM | Verified by: James Wilson</small><br>
+                      <small><i class="fa fa-barcode"></i> ID Band Scanned: <code>CRM-2025-042</code></small>
+                    </div>
+                    <div class="custody-step verified">
+                      <strong>Refrigeration</strong><br>
+                      <small class="text-muted">Nov 28, 2025 - 11:00 AM | Verified by: Sarah Davis</small><br>
+                      <small><i class="fa fa-barcode"></i> ID Band Scanned: <code>CRM-2025-042</code></small>
+                    </div>
+                    <div class="custody-step verified">
+                      <strong>Authorization Received</strong><br>
+                      <small class="text-muted">Nov 29, 2025 - 2:00 PM | Signed by: Michael Brown (Next of Kin)</small><br>
+                      <small><i class="fa fa-check-circle text-success"></i> Digital Signature Captured</small>
+                    </div>
+                    <div class="custody-step verified">
+                      <strong>Pre-Cremation ID Verification</strong><br>
+                      <small class="text-muted">Nov 30, 2025 - 3:45 PM | Verified by: Michael Chen</small><br>
+                      <small><i class="fa fa-barcode"></i> ID Band Scanned: <code>CRM-2025-042</code></small>
+                    </div>
+                    <div class="custody-step">
+                      <strong>Cremation Process</strong><br>
+                      <small class="text-muted">Scheduled: Nov 30, 2025 - 4:00 PM</small><br>
+                      <small><i class="fa fa-clock-o"></i> Pending</small>
+                    </div>
+                    <div class="custody-step">
+                      <strong>Cremated Remains Processing</strong><br>
+                      <small class="text-muted">Pending</small>
+                    </div>
+                    <div class="custody-step">
+                      <strong>Release to Family</strong><br>
+                      <small class="text-muted">Pending</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <!-- Crematory Status -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-thermometer-full"></i> Retort Status</h3>
+                </div>
+                <div class="box-body">
+                  <div class="callout callout-success">
+                    <h4>Retort #1</h4>
+                    <p>Status: <strong>Ready</strong></p>
+                    <p>Last Used: Nov 29, 2:00 PM</p>
+                    <p>Last Temp: 1,800°F</p>
+                  </div>
+                  <div class="callout callout-warning">
+                    <h4>Retort #2</h4>
+                    <p>Status: <strong>Maintenance</strong></p>
+                    <p>Expected Ready: Dec 1</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Today's Cremations -->
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-calendar"></i> Today's Schedule</h3>
+                </div>
+                <div class="box-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <span class="badge bg-yellow">4:00 PM</span>
+                      Elizabeth Brown
+                    </li>
+                  </ul>
+                  <p class="text-muted text-center">1 cremation scheduled today</p>
+                </div>
+              </div>
+
+              <!-- Temperature Logging -->
+              <div class="box box-default">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-line-chart"></i> Quick Log Entry</h3>
+                </div>
+                <div class="box-body">
+                  <form>
+                    <div class="form-group">
+                      <label>Cremation ID</label>
+                      <input type="text" class="form-control" placeholder="Scan or enter ID">
+                    </div>
+                    <div class="form-group">
+                      <label>Temperature (°F)</label>
+                      <input type="number" class="form-control" placeholder="1800">
+                    </div>
+                    <div class="form-group">
+                      <label>Notes</label>
+                      <textarea class="form-control" rows="2"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block"><i class="fa fa-save"></i> Log Entry</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Website & Online Arrangements Tab -->
+        <div id="online-arrangements" class="tab-content-section">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-globe"></i> Online Arrangements</h3>
+                </div>
+                <div class="box-body">
+                  <div class="callout callout-info">
+                    <h4><i class="fa fa-info-circle"></i> 24/7 Online Arrangements</h4>
+                    <p>Families can start arrangements anytime on your website. Leads flow straight into this system.</p>
+                  </div>
+
+                  <h4>Recent Online Inquiries</h4>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Nov 30, 9:15 AM</td>
+                        <td>Jennifer Garcia</td>
+                        <td>j.garcia@email.com</td>
+                        <td>(555) 678-9012</td>
+                        <td><span class="label label-success">At-Need</span></td>
+                        <td><span class="label label-warning">New</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-success"><i class="fa fa-phone"></i> Contact</button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-arrow-right"></i> Convert</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Nov 29, 4:30 PM</td>
+                        <td>Robert Thompson</td>
+                        <td>r.thompson@email.com</td>
+                        <td>(555) 789-0123</td>
+                        <td><span class="label label-info">Pre-Need</span></td>
+                        <td><span class="label label-primary">Contacted</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i> View</button>
+                          <button class="btn btn-xs btn-primary"><i class="fa fa-arrow-right"></i> Convert</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Nov 28, 11:00 AM</td>
+                        <td>Maria Santos</td>
+                        <td>m.santos@email.com</td>
+                        <td>(555) 890-1234</td>
+                        <td><span class="label label-success">At-Need</span></td>
+                        <td><span class="label label-success">Converted</span></td>
+                        <td>
+                          <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i> View Case</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Online Store -->
+              <div class="box box-success">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-shopping-cart"></i> Online Merchandise Store</h3>
+                </div>
+                <div class="box-body">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="thumbnail">
+                        <img src="https://via.placeholder.com/150x100" alt="Casket">
+                        <div class="caption">
+                          <h5>Oak Heritage</h5>
+                          <p>$4,295</p>
+                          <p><span class="label label-success">12 Views</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="thumbnail">
+                        <img src="https://via.placeholder.com/150x100" alt="Urn">
+                        <div class="caption">
+                          <h5>Brass Classic Urn</h5>
+                          <p>$295</p>
+                          <p><span class="label label-success">8 Views</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="thumbnail">
+                        <img src="https://via.placeholder.com/150x100" alt="Flowers">
+                        <div class="caption">
+                          <h5>Memorial Spray</h5>
+                          <p>$150</p>
+                          <p><span class="label label-success">15 Views</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="thumbnail">
+                        <img src="https://via.placeholder.com/150x100" alt="Memorial">
+                        <div class="caption">
+                          <h5>Prayer Cards (100)</h5>
+                          <p>$75</p>
+                          <p><span class="label label-success">5 Views</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-success"><i class="fa fa-plus"></i> Add Product</button>
+                  <button class="btn btn-primary"><i class="fa fa-cog"></i> Manage Store</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <!-- Website Stats -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-line-chart"></i> Website Analytics</h3>
+                </div>
+                <div class="box-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <span class="badge bg-aqua">1,245</span>
+                      Visitors This Month
+                    </li>
+                    <li class="list-group-item">
+                      <span class="badge bg-green">32</span>
+                      Online Inquiries
+                    </li>
+                    <li class="list-group-item">
+                      <span class="badge bg-yellow">18</span>
+                      Converted to Cases
+                    </li>
+                    <li class="list-group-item">
+                      <span class="badge bg-red">$12,450</span>
+                      Online Store Revenue
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- SEO & Marketing -->
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-bullhorn"></i> Marketing ROI</h3>
+                </div>
+                <div class="box-body">
+                  <table class="table table-condensed">
+                    <tbody>
+                      <tr>
+                        <td>Google Ads</td>
+                        <td>8 leads</td>
+                        <td class="text-success">$1,200 ROI</td>
+                      </tr>
+                      <tr>
+                        <td>Facebook</td>
+                        <td>5 leads</td>
+                        <td class="text-success">$750 ROI</td>
+                      </tr>
+                      <tr>
+                        <td>Obituary Links</td>
+                        <td>12 leads</td>
+                        <td class="text-success">$2,100 ROI</td>
+                      </tr>
+                      <tr>
+                        <td>Organic Search</td>
+                        <td>7 leads</td>
+                        <td class="text-success">$950 ROI</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Live Memorial Pages -->
+              <div class="box box-default">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-heart"></i> Active Memorial Pages</h3>
+                </div>
+                <div class="box-body">
+                  <ul class="list-unstyled">
+                    <li style="padding: 5px 0;"><a href="#">John Doe</a> - 145 visitors</li>
+                    <li style="padding: 5px 0;"><a href="#">Jane Smith</a> - 89 visitors</li>
+                    <li style="padding: 5px 0;"><a href="#">Mary Johnson</a> - 67 visitors</li>
+                  </ul>
+                  <hr>
+                  <button class="btn btn-default btn-block btn-sm"><i class="fa fa-list"></i> View All Pages</button>
                 </div>
               </div>
             </div>
@@ -519,45 +2864,204 @@
           </div>
         </div>
 
-        <!-- Reports & Analytics Tab -->
+        <!-- Reports & Analytics Tab (Enhanced) -->
         <div id="reports" class="tab-content-section">
           <div class="row">
+            <!-- Key Metrics -->
+            <div class="col-md-3">
+              <div class="info-box bg-aqua">
+                <span class="info-box-icon"><i class="fa fa-phone"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Call Volume</span>
+                  <span class="info-box-number">142</span>
+                  <span class="progress-description">This Month</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-green">
+                <span class="info-box-icon"><i class="fa fa-users"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Cases Served</span>
+                  <span class="info-box-number">38</span>
+                  <span class="progress-description">This Month</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-yellow">
+                <span class="info-box-icon"><i class="fa fa-dollar"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Avg Revenue/Call</span>
+                  <span class="info-box-number">$8,450</span>
+                  <span class="progress-description">+12% vs last month</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="info-box bg-red">
+                <span class="info-box-icon"><i class="fa fa-pie-chart"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Pre-Need Ratio</span>
+                  <span class="info-box-number">35%</span>
+                  <span class="progress-description">Of total cases</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
             <div class="col-md-6">
-              <div class="box">
+              <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Monthly Case Statistics</h3>
+                  <h3 class="box-title"><i class="fa fa-bar-chart"></i> Monthly Case Statistics</h3>
                 </div>
                 <div class="box-body">
                   <div class="chart">
-                    <div style="text-align: center; padding: 50px; color: #999;">
+                    <div style="text-align: center; padding: 30px; color: #999;">
                       <i class="fa fa-bar-chart" style="font-size: 48px;"></i>
                       <p>Chart visualization will appear here</p>
+                      <table class="table table-condensed" style="color: #333; text-align: left;">
+                        <tr><td>January</td><td>32 cases</td><td>$256,000</td></tr>
+                        <tr><td>February</td><td>28 cases</td><td>$224,000</td></tr>
+                        <tr><td>March</td><td>35 cases</td><td>$280,000</td></tr>
+                        <tr><td>April</td><td>30 cases</td><td>$240,000</td></tr>
+                      </table>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
-              <div class="box">
+              <div class="box box-success">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Revenue Overview</h3>
+                  <h3 class="box-title"><i class="fa fa-line-chart"></i> Revenue Overview</h3>
                 </div>
                 <div class="box-body">
                   <div class="chart">
-                    <div style="text-align: center; padding: 50px; color: #999;">
+                    <div style="text-align: center; padding: 30px; color: #999;">
                       <i class="fa fa-line-chart" style="font-size: 48px;"></i>
                       <p>Revenue chart will appear here</p>
+                      <table class="table table-condensed" style="color: #333; text-align: left;">
+                        <tr><td><strong>Total Revenue YTD</strong></td><td class="text-right"><strong>$1,245,000</strong></td></tr>
+                        <tr><td>Services Revenue</td><td class="text-right">$845,000</td></tr>
+                        <tr><td>Merchandise Revenue</td><td class="text-right">$320,000</td></tr>
+                        <tr><td>Cash Advances</td><td class="text-right">$80,000</td></tr>
+                      </table>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-pie-chart"></i> Case Types</h3>
+                </div>
+                <div class="box-body">
+                  <table class="table table-condensed">
+                    <tbody>
+                      <tr>
+                        <td><span class="label label-success">At-Need</span> Traditional Burial</td>
+                        <td class="text-right">45%</td>
+                      </tr>
+                      <tr>
+                        <td><span class="label label-success">At-Need</span> Cremation</td>
+                        <td class="text-right">35%</td>
+                      </tr>
+                      <tr>
+                        <td><span class="label label-warning">Pre-Need</span> Traditional</td>
+                        <td class="text-right">12%</td>
+                      </tr>
+                      <tr>
+                        <td><span class="label label-warning">Pre-Need</span> Cremation</td>
+                        <td class="text-right">8%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-users"></i> Staff Performance</h3>
+                </div>
+                <div class="box-body">
+                  <table class="table table-condensed">
+                    <thead>
+                      <tr>
+                        <th>Director</th>
+                        <th>Cases</th>
+                        <th>Revenue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>James Wilson</td>
+                        <td>18</td>
+                        <td>$152,000</td>
+                      </tr>
+                      <tr>
+                        <td>Sarah Davis</td>
+                        <td>14</td>
+                        <td>$118,000</td>
+                      </tr>
+                      <tr>
+                        <td>Michael Chen</td>
+                        <td>6</td>
+                        <td>$51,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="box box-danger">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-bullhorn"></i> Marketing ROI</h3>
+                </div>
+                <div class="box-body">
+                  <table class="table table-condensed">
+                    <thead>
+                      <tr>
+                        <th>Source</th>
+                        <th>Leads</th>
+                        <th>ROI</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Google Ads</td>
+                        <td>12</td>
+                        <td class="text-success">$18,000</td>
+                      </tr>
+                      <tr>
+                        <td>Obituary Links</td>
+                        <td>8</td>
+                        <td class="text-success">$12,000</td>
+                      </tr>
+                      <tr>
+                        <td>Referrals</td>
+                        <td>15</td>
+                        <td class="text-success">$22,500</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="row">
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Export Reports</h3>
+                  <h3 class="box-title"><i class="fa fa-download"></i> Export Reports</h3>
                 </div>
                 <div class="box-body">
                   <div class="row">
@@ -568,10 +3072,10 @@
                       <button class="btn btn-success btn-block"><i class="fa fa-file-excel-o"></i> Financial Report (Excel)</button>
                     </div>
                     <div class="col-md-3">
-                      <button class="btn btn-info btn-block"><i class="fa fa-file-text-o"></i> Staff Report (CSV)</button>
+                      <button class="btn btn-info btn-block"><i class="fa fa-file-text-o"></i> Staff Performance (CSV)</button>
                     </div>
                     <div class="col-md-3">
-                      <button class="btn btn-warning btn-block"><i class="fa fa-file-o"></i> Inventory Report</button>
+                      <button class="btn btn-warning btn-block"><i class="fa fa-file-o"></i> Marketing Analytics</button>
                     </div>
                   </div>
                 </div>
@@ -1089,6 +3593,50 @@
         element.click();
         document.body.removeChild(element);
       }
+
+      // Dark Mode Toggle
+      $('#darkModeToggle').on('click', function(e) {
+        e.preventDefault();
+        $('body').toggleClass('dark-mode');
+        var icon = $(this).find('i');
+        if ($('body').hasClass('dark-mode')) {
+          icon.removeClass('fa-moon-o').addClass('fa-sun-o');
+          localStorage.setItem('darkMode', 'enabled');
+        } else {
+          icon.removeClass('fa-sun-o').addClass('fa-moon-o');
+          localStorage.setItem('darkMode', 'disabled');
+        }
+      });
+
+      // Check for saved dark mode preference
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        $('body').addClass('dark-mode');
+        $('#darkModeToggle').find('i').removeClass('fa-moon-o').addClass('fa-sun-o');
+      }
+
+      // Task checkbox functionality
+      $('.task-checkbox').on('change', function() {
+        var taskItem = $(this).closest('.task-item');
+        if ($(this).is(':checked')) {
+          taskItem.addClass('completed');
+        } else {
+          taskItem.removeClass('completed');
+        }
+      });
+
+      // Initialize task items based on checkbox state
+      $('.task-checkbox:checked').each(function() {
+        $(this).closest('.task-item').addClass('completed');
+      });
+
+      // Quick action buttons in dashboard
+      $('.box-body button[data-tab]').on('click', function(e) {
+        e.preventDefault();
+        var tabId = $(this).data('tab');
+        if (tabId) {
+          switchTab(tabId);
+        }
+      });
     });
   </script>
 </body>
