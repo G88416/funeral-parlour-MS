@@ -22,6 +22,45 @@
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <style>
+    .tab-content-section {
+      display: none;
+    }
+    .tab-content-section.active {
+      display: block;
+    }
+    .dropzone {
+      border: 2px dashed #3c8dbc;
+      border-radius: 5px;
+      padding: 30px;
+      text-align: center;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .dropzone:hover, .dropzone.dragover {
+      background-color: #e8f4fc;
+      border-color: #2579a9;
+    }
+    .dropzone i {
+      font-size: 48px;
+      color: #3c8dbc;
+      margin-bottom: 15px;
+    }
+    .import-preview {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-top: 15px;
+    }
+    .import-progress {
+      display: none;
+      margin-top: 15px;
+    }
+    .template-download {
+      margin-top: 15px;
+    }
+  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
@@ -76,14 +115,14 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
-          <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-          <li><a href="#"><i class="fa fa-book"></i> <span>Case Management</span></a></li>
-          <li><a href="#"><i class="fa fa-users"></i> <span>Client & Family Records</span></a></li>
-          <li><a href="#"><i class="fa fa-cubes"></i> <span>Inventory Tracking</span></a></li>
-          <li><a href="#"><i class="fa fa-calendar"></i> <span>Scheduling & Appointments</span></a></li>
-          <li><a href="#"><i class="fa fa-users"></i> <span>Staff Management</span></a></li>
-          <li><a href="#"><i class="fa fa-file-text-o"></i> <span>Reports & Analytics</span></a></li>
-          <li><a href="#"><i class="fa fa-gear"></i> <span>Settings</span></a></li>
+          <li class="active"><a href="#" data-tab="dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+          <li><a href="#" data-tab="case-management"><i class="fa fa-book"></i> <span>Case Management</span></a></li>
+          <li><a href="#" data-tab="client-records"><i class="fa fa-users"></i> <span>Client & Family Records</span></a></li>
+          <li><a href="#" data-tab="inventory"><i class="fa fa-cubes"></i> <span>Inventory Tracking</span></a></li>
+          <li><a href="#" data-tab="scheduling"><i class="fa fa-calendar"></i> <span>Scheduling & Appointments</span></a></li>
+          <li><a href="#" data-tab="staff"><i class="fa fa-users"></i> <span>Staff Management</span></a></li>
+          <li><a href="#" data-tab="reports"><i class="fa fa-file-text-o"></i> <span>Reports & Analytics</span></a></li>
+          <li><a href="#" data-tab="settings"><i class="fa fa-gear"></i> <span>Settings</span></a></li>
         </ul>
       </section>
     </aside>
@@ -100,81 +139,528 @@
 
       <!-- Main content -->
       <section class="content">
-        <div class="row">
-          <!-- Info Boxes -->
-          <div class="col-lg-3 col-xs-6">
-            <div class="small-box bg-aqua">
-              <div class="inner">
-                <h3>150</h3>
-                <p>Active Cases</p>
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content-section active">
+          <div class="row">
+            <!-- Info Boxes -->
+            <div class="col-lg-3 col-xs-6">
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3>150</h3>
+                  <p>Active Cases</p>
+                </div>
+                <div class="icon"><i class="ion ion-bag"></i></div>
+                <a href="#" class="small-box-footer" data-tab="case-management">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon"><i class="ion ion-bag"></i></div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+                  <p>Completion Rate</p>
+                </div>
+                <div class="icon"><i class="ion ion-stats-bars"></i></div>
+                <a href="#" class="small-box-footer" data-tab="reports">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3>44</h3>
+                  <p>Staff Members</p>
+                </div>
+                <div class="icon"><i class="ion ion-person-add"></i></div>
+                <a href="#" class="small-box-footer" data-tab="staff">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+              <div class="small-box bg-red">
+                <div class="inner">
+                  <h3>65</h3>
+                  <p>Inventory Items</p>
+                </div>
+                <div class="icon"><i class="ion ion-pie-graph"></i></div>
+                <a href="#" class="small-box-footer" data-tab="inventory">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
             </div>
           </div>
-          <div class="col-lg-3 col-xs-6">
-            <div class="small-box bg-green">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-                <p>Completion Rate</p>
+
+          <!-- Additional Content: e.g., Recent Cases Table -->
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Recent Cases</h3>
+                </div>
+                <div class="box-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Case ID</th>
+                        <th>Deceased Name</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>001</td>
+                        <td>John Doe</td>
+                        <td>In Progress</td>
+                        <td>2025-11-28</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="icon"><i class="ion ion-stats-bars"></i></div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-xs-6">
-            <div class="small-box bg-yellow">
-              <div class="inner">
-                <h3>44</h3>
-                <p>Staff Members</p>
-              </div>
-              <div class="icon"><i class="ion ion-person-add"></i></div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-xs-6">
-            <div class="small-box bg-red">
-              <div class="inner">
-                <h3>65</h3>
-                <p>Inventory Items</p>
-              </div>
-              <div class="icon"><i class="ion ion-pie-graph"></i></div>
-              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Additional Content: e.g., Recent Cases Table -->
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="box">
-              <div class="box-header">
-                <h3 class="box-title">Recent Cases</h3>
-              </div>
-              <div class="box-body">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Case ID</th>
-                      <th>Deceased Name</th>
-                      <th>Status</th>
-                      <th>Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>001</td>
-                      <td>John Doe</td>
-                      <td>In Progress</td>
-                      <td>2025-11-28</td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                  </tbody>
-                </table>
+        <!-- Case Management Tab -->
+        <div id="case-management" class="tab-content-section">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Case Management</h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addCaseModal">
+                      <i class="fa fa-plus"></i> Add New Case
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#bulkImportModal" data-import-type="cases">
+                      <i class="fa fa-upload"></i> Bulk Import
+                    </button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table class="table table-bordered table-striped" id="casesTable">
+                    <thead>
+                      <tr>
+                        <th>Case ID</th>
+                        <th>Deceased Name</th>
+                        <th>Date of Death</th>
+                        <th>Service Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>001</td>
+                        <td>John Doe</td>
+                        <td>2025-11-25</td>
+                        <td>Full Service</td>
+                        <td><span class="label label-warning">In Progress</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>002</td>
+                        <td>Jane Smith</td>
+                        <td>2025-11-26</td>
+                        <td>Cremation</td>
+                        <td><span class="label label-success">Completed</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Client & Family Records Tab -->
+        <div id="client-records" class="tab-content-section">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Client & Family Records</h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addClientModal">
+                      <i class="fa fa-plus"></i> Add New Client
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#bulkImportModal" data-import-type="clients">
+                      <i class="fa fa-upload"></i> Bulk Import
+                    </button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table class="table table-bordered table-striped" id="clientsTable">
+                    <thead>
+                      <tr>
+                        <th>Client ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Relationship</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>C001</td>
+                        <td>Mary Doe</td>
+                        <td>(555) 123-4567</td>
+                        <td>mary.doe@email.com</td>
+                        <td>Spouse</td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inventory Tracking Tab -->
+        <div id="inventory" class="tab-content-section">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Inventory Tracking</h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addInventoryModal">
+                      <i class="fa fa-plus"></i> Add Item
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#bulkImportModal" data-import-type="inventory">
+                      <i class="fa fa-upload"></i> Bulk Import
+                    </button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table class="table table-bordered table-striped" id="inventoryTable">
+                    <thead>
+                      <tr>
+                        <th>Item ID</th>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>INV001</td>
+                        <td>Oak Casket - Standard</td>
+                        <td>Caskets</td>
+                        <td>15</td>
+                        <td>$2,500.00</td>
+                        <td><span class="label label-success">In Stock</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>INV002</td>
+                        <td>Memorial Flowers - Arrangement</td>
+                        <td>Flowers</td>
+                        <td>3</td>
+                        <td>$150.00</td>
+                        <td><span class="label label-warning">Low Stock</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scheduling & Appointments Tab -->
+        <div id="scheduling" class="tab-content-section">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Scheduling & Appointments</h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addAppointmentModal">
+                      <i class="fa fa-plus"></i> Add Appointment
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#bulkImportModal" data-import-type="appointments">
+                      <i class="fa fa-upload"></i> Bulk Import
+                    </button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table class="table table-bordered table-striped" id="appointmentsTable">
+                    <thead>
+                      <tr>
+                        <th>Appointment ID</th>
+                        <th>Client Name</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>APT001</td>
+                        <td>Mary Doe</td>
+                        <td>Arrangement Meeting</td>
+                        <td>2025-11-30</td>
+                        <td>10:00 AM</td>
+                        <td><span class="label label-info">Scheduled</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>APT002</td>
+                        <td>Robert Smith</td>
+                        <td>Memorial Service</td>
+                        <td>2025-12-01</td>
+                        <td>2:00 PM</td>
+                        <td><span class="label label-warning">Pending Confirmation</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Staff Management Tab -->
+        <div id="staff" class="tab-content-section">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Staff Management</h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addStaffModal">
+                      <i class="fa fa-plus"></i> Add Staff Member
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#bulkImportModal" data-import-type="staff">
+                      <i class="fa fa-upload"></i> Bulk Import
+                    </button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <table class="table table-bordered table-striped" id="staffTable">
+                    <thead>
+                      <tr>
+                        <th>Staff ID</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Department</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>STF001</td>
+                        <td>James Wilson</td>
+                        <td>Funeral Director</td>
+                        <td>Operations</td>
+                        <td>(555) 234-5678</td>
+                        <td><span class="label label-success">Active</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>STF002</td>
+                        <td>Sarah Johnson</td>
+                        <td>Administrative Assistant</td>
+                        <td>Administration</td>
+                        <td>(555) 345-6789</td>
+                        <td><span class="label label-success">Active</span></td>
+                        <td>
+                          <button class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reports & Analytics Tab -->
+        <div id="reports" class="tab-content-section">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Monthly Case Statistics</h3>
+                </div>
+                <div class="box-body">
+                  <div class="chart">
+                    <div style="text-align: center; padding: 50px; color: #999;">
+                      <i class="fa fa-bar-chart" style="font-size: 48px;"></i>
+                      <p>Chart visualization will appear here</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Revenue Overview</h3>
+                </div>
+                <div class="box-body">
+                  <div class="chart">
+                    <div style="text-align: center; padding: 50px; color: #999;">
+                      <i class="fa fa-line-chart" style="font-size: 48px;"></i>
+                      <p>Revenue chart will appear here</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Export Reports</h3>
+                </div>
+                <div class="box-body">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <button class="btn btn-primary btn-block"><i class="fa fa-file-pdf-o"></i> Cases Report (PDF)</button>
+                    </div>
+                    <div class="col-md-3">
+                      <button class="btn btn-success btn-block"><i class="fa fa-file-excel-o"></i> Financial Report (Excel)</button>
+                    </div>
+                    <div class="col-md-3">
+                      <button class="btn btn-info btn-block"><i class="fa fa-file-text-o"></i> Staff Report (CSV)</button>
+                    </div>
+                    <div class="col-md-3">
+                      <button class="btn btn-warning btn-block"><i class="fa fa-file-o"></i> Inventory Report</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div id="settings" class="tab-content-section">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">General Settings</h3>
+                </div>
+                <div class="box-body">
+                  <form>
+                    <div class="form-group">
+                      <label>Business Name</label>
+                      <input type="text" class="form-control" value="Funeral Parlor Management System">
+                    </div>
+                    <div class="form-group">
+                      <label>Business Address</label>
+                      <textarea class="form-control" rows="3">123 Memorial Lane, City, State 12345</textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>Contact Phone</label>
+                      <input type="text" class="form-control" value="(555) 000-0000">
+                    </div>
+                    <div class="form-group">
+                      <label>Contact Email</label>
+                      <input type="email" class="form-control" value="info@funeralparlor.com">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Settings</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">User Preferences</h3>
+                </div>
+                <div class="box-body">
+                  <form>
+                    <div class="form-group">
+                      <label>Language</label>
+                      <select class="form-control">
+                        <option>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Timezone</label>
+                      <select class="form-control">
+                        <option>Eastern Time (ET)</option>
+                        <option>Central Time (CT)</option>
+                        <option>Mountain Time (MT)</option>
+                        <option>Pacific Time (PT)</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Date Format</label>
+                      <select class="form-control">
+                        <option>MM/DD/YYYY</option>
+                        <option>DD/MM/YYYY</option>
+                        <option>YYYY-MM-DD</option>
+                      </select>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" checked> Email Notifications
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" checked> SMS Notifications
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Preferences</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
 
@@ -183,6 +669,119 @@
       <div class="pull-right hidden-xs"><b>Version</b> 1.0.0</div>
       <strong>Copyright &copy; 2025 Funeral Parlor Management System.</strong> All rights reserved.
     </footer>
+
+    <!-- Bulk Import Modal -->
+    <div class="modal fade" id="bulkImportModal" tabindex="-1" role="dialog" aria-labelledby="bulkImportModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="bulkImportModalLabel"><i class="fa fa-upload"></i> Bulk Import</h4>
+          </div>
+          <div class="modal-body">
+            <!-- Import Type Selection -->
+            <div class="form-group">
+              <label for="importType">Select Import Type:</label>
+              <select class="form-control" id="importType">
+                <option value="cases">Cases</option>
+                <option value="clients">Clients & Family Records</option>
+                <option value="inventory">Inventory Items</option>
+                <option value="staff">Staff Members</option>
+                <option value="appointments">Appointments</option>
+              </select>
+            </div>
+
+            <!-- File Upload Dropzone -->
+            <div class="dropzone" id="dropzone">
+              <i class="fa fa-cloud-upload"></i>
+              <h4>Drag & Drop your file here</h4>
+              <p>or click to browse</p>
+              <p class="text-muted">Supported formats: CSV, Excel (.xlsx, .xls)</p>
+              <input type="file" id="fileInput" accept=".csv,.xlsx,.xls" style="display: none;">
+            </div>
+
+            <!-- Selected File Info -->
+            <div id="selectedFileInfo" style="display: none; margin-top: 15px;">
+              <div class="alert alert-info">
+                <i class="fa fa-file"></i> <span id="selectedFileName"></span>
+                <button type="button" class="btn btn-xs btn-danger pull-right" id="removeFile">
+                  <i class="fa fa-times"></i> Remove
+                </button>
+              </div>
+            </div>
+
+            <!-- Template Download Section -->
+            <div class="template-download">
+              <p><strong>Download Template:</strong></p>
+              <button type="button" class="btn btn-sm btn-default" id="downloadCSVTemplate">
+                <i class="fa fa-file-text-o"></i> CSV Template
+              </button>
+              <button type="button" class="btn btn-sm btn-default" id="downloadExcelTemplate">
+                <i class="fa fa-file-excel-o"></i> Excel Template
+              </button>
+            </div>
+
+            <!-- Import Options -->
+            <div class="row" style="margin-top: 20px;">
+              <div class="col-md-6">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="skipFirstRow" checked> Skip first row (header)
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="updateExisting"> Update existing records
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Import Preview -->
+            <div class="import-preview" id="importPreview" style="display: none;">
+              <h5><i class="fa fa-table"></i> Data Preview (First 5 rows)</h5>
+              <div class="table-responsive">
+                <table class="table table-bordered table-condensed" id="previewTable">
+                  <thead id="previewTableHead"></thead>
+                  <tbody id="previewTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Import Progress -->
+            <div class="import-progress" id="importProgress">
+              <h5><i class="fa fa-spinner fa-spin"></i> Importing Data...</h5>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" id="importProgressBar" style="width: 0%">
+                  <span id="importProgressText">0%</span>
+                </div>
+              </div>
+              <div id="importStatus" class="text-muted"></div>
+            </div>
+
+            <!-- Import Results -->
+            <div id="importResults" style="display: none; margin-top: 15px;">
+              <div class="alert" id="importResultsAlert">
+                <h5 id="importResultsTitle"></h5>
+                <p id="importResultsMessage"></p>
+                <ul id="importResultsDetails"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-info" id="validateImportBtn" disabled>
+              <i class="fa fa-check"></i> Validate
+            </button>
+            <button type="button" class="btn btn-primary" id="startImportBtn" disabled>
+              <i class="fa fa-upload"></i> Start Import
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
@@ -195,13 +794,336 @@
   <!-- AdminLTE App -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.18/js/adminlte.min.js"></script>
 
-  <!-- Optional: Add custom JS for interactivity -->
+  <!-- Tab Navigation and Bulk Import JS -->
   <script>
-    // Example: Sidebar toggle for mobile
     $(document).ready(function () {
+      // Sidebar toggle for mobile
       $('[data-toggle="offcanvas"]').click(function () {
         $('.row-offcanvas').toggleClass('active');
       });
+
+      // Tab Navigation System
+      function switchTab(tabId) {
+        // Hide all tab content sections
+        $('.tab-content-section').removeClass('active');
+        
+        // Show the selected tab content
+        $('#' + tabId).addClass('active');
+        
+        // Update sidebar active state
+        $('.sidebar-menu li').removeClass('active');
+        $('.sidebar-menu a[data-tab="' + tabId + '"]').parent('li').addClass('active');
+        
+        // Update breadcrumb
+        var tabName = $('.sidebar-menu a[data-tab="' + tabId + '"] span').text() || 'Dashboard';
+        $('.content-header h1').html(tabName + ' <small>Funeral Parlor Overview</small>');
+        $('.breadcrumb li.active').text(tabName);
+      }
+
+      // Handle sidebar menu clicks
+      $('.sidebar-menu a[data-tab]').on('click', function(e) {
+        e.preventDefault();
+        var tabId = $(this).data('tab');
+        switchTab(tabId);
+      });
+
+      // Handle info box footer links
+      $('a.small-box-footer[data-tab]').on('click', function(e) {
+        e.preventDefault();
+        var tabId = $(this).data('tab');
+        switchTab(tabId);
+      });
+
+      // Bulk Import Modal - Set import type when opening
+      $('[data-toggle="modal"][data-target="#bulkImportModal"]').on('click', function() {
+        var importType = $(this).data('import-type');
+        if (importType) {
+          $('#importType').val(importType);
+        }
+        resetImportModal();
+      });
+
+      // File Dropzone Functionality
+      var dropzone = document.getElementById('dropzone');
+      var fileInput = document.getElementById('fileInput');
+      var selectedFile = null;
+
+      // Only add event listeners if elements exist
+      if (dropzone && fileInput) {
+        // Click to browse
+        dropzone.addEventListener('click', function() {
+          fileInput.click();
+        });
+
+        // Drag and drop events
+        dropzone.addEventListener('dragover', function(e) {
+          e.preventDefault();
+          dropzone.classList.add('dragover');
+        });
+
+        dropzone.addEventListener('dragleave', function(e) {
+          e.preventDefault();
+          dropzone.classList.remove('dragover');
+        });
+
+        dropzone.addEventListener('drop', function(e) {
+          e.preventDefault();
+          dropzone.classList.remove('dragover');
+          var files = e.dataTransfer.files;
+          if (files.length > 1) {
+            showImportError('Please drop only one file at a time.');
+            return;
+          }
+          if (files.length > 0) {
+            handleFileSelect(files[0]);
+          }
+        });
+
+        // File input change
+        fileInput.addEventListener('change', function() {
+          if (this.files.length > 0) {
+            handleFileSelect(this.files[0]);
+          }
+        });
+      }
+
+      // Show error message in import modal
+      function showImportError(message) {
+        $('#importResults').show();
+        $('#importResultsAlert').removeClass('alert-success').addClass('alert-danger');
+        $('#importResultsTitle').html('<i class="fa fa-exclamation-circle"></i> Error');
+        $('#importResultsMessage').text(message);
+        $('#importResultsDetails').html('');
+      }
+
+      // Handle file selection
+      function handleFileSelect(file) {
+        var allowedExtensions = ['.csv', '.xls', '.xlsx'];
+        
+        var fileExtension = '.' + file.name.split('.').pop().toLowerCase();
+        
+        if (allowedExtensions.indexOf(fileExtension) === -1) {
+          showImportError('Please select a valid file format (CSV, XLS, or XLSX)');
+          return;
+        }
+
+        // Hide any previous error messages
+        $('#importResults').hide();
+        
+        selectedFile = file;
+        $('#selectedFileName').text(file.name + ' (' + formatFileSize(file.size) + ')');
+        $('#selectedFileInfo').show();
+        $('#dropzone').hide();
+        $('#validateImportBtn').prop('disabled', false);
+        
+        // Generate preview
+        generatePreview(file);
+      }
+
+      // Format file size
+      function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        var k = 1024;
+        var sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        var i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      }
+
+      // Remove file
+      $('#removeFile').on('click', function() {
+        resetFileSelection();
+      });
+
+      function resetFileSelection() {
+        selectedFile = null;
+        fileInput.value = '';
+        $('#selectedFileInfo').hide();
+        $('#dropzone').show();
+        $('#validateImportBtn').prop('disabled', true);
+        $('#startImportBtn').prop('disabled', true);
+        $('#importPreview').hide();
+      }
+
+      function resetImportModal() {
+        resetFileSelection();
+        $('#importProgress').hide();
+        $('#importResults').hide();
+        $('#importProgressBar').css('width', '0%');
+        $('#importProgressText').text('0%');
+      }
+
+      // Generate preview from CSV file
+      function generatePreview(file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var content = e.target.result;
+          var lines = content.split('\n').filter(function(line) { return line.trim() !== ''; });
+          var previewData = lines.slice(0, 6); // First 6 rows (including header)
+          
+          if (previewData.length > 0) {
+            var headers = parseCSVLine(previewData[0]);
+            var headerHtml = '<tr>';
+            headers.forEach(function(header) {
+              headerHtml += '<th>' + escapeHtml(header) + '</th>';
+            });
+            headerHtml += '</tr>';
+            $('#previewTableHead').html(headerHtml);
+            
+            var bodyHtml = '';
+            for (var i = 1; i < previewData.length && i <= 5; i++) {
+              var cells = parseCSVLine(previewData[i]);
+              bodyHtml += '<tr>';
+              cells.forEach(function(cell) {
+                bodyHtml += '<td>' + escapeHtml(cell) + '</td>';
+              });
+              bodyHtml += '</tr>';
+            }
+            $('#previewTableBody').html(bodyHtml);
+            $('#importPreview').show();
+          }
+        };
+        reader.readAsText(file);
+      }
+
+      // Parse CSV line
+      function parseCSVLine(line) {
+        var result = [];
+        var current = '';
+        var inQuotes = false;
+        
+        for (var i = 0; i < line.length; i++) {
+          var char = line[i];
+          if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            result.push(current.trim());
+            current = '';
+          } else {
+            current += char;
+          }
+        }
+        result.push(current.trim());
+        return result;
+      }
+
+      // Escape HTML to prevent XSS
+      function escapeHtml(text) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(text));
+        return div.innerHTML;
+      }
+
+      // Validate Import (Demo functionality - replace with actual API call in production)
+      $('#validateImportBtn').on('click', function() {
+        if (!selectedFile) return;
+        
+        // Demo: Simulate validation - In production, this would call a backend API
+        var btn = $(this);
+        btn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Validating...');
+        
+        setTimeout(function() {
+          btn.html('<i class="fa fa-check"></i> Validated');
+          $('#startImportBtn').prop('disabled', false);
+          
+          // Show validation success
+          $('#importResults').show();
+          $('#importResultsAlert').removeClass('alert-danger').addClass('alert-success');
+          $('#importResultsTitle').html('<i class="fa fa-check-circle"></i> Validation Successful (Demo)');
+          $('#importResultsMessage').text('File is ready for import. Note: This is a demo - connect to backend for actual validation.');
+          $('#importResultsDetails').html('<li>Records found: ' + Math.floor(Math.random() * 50 + 10) + '</li><li>Format: Valid</li><li>No errors detected</li>');
+        }, 1500);
+      });
+
+      // Start Import (Demo functionality - replace with actual API call in production)
+      $('#startImportBtn').on('click', function() {
+        if (!selectedFile) return;
+        
+        var btn = $(this);
+        btn.prop('disabled', true);
+        $('#validateImportBtn').prop('disabled', true);
+        $('#importResults').hide();
+        $('#importProgress').show();
+        
+        // Demo: Simulate import progress - In production, this would call a backend API
+        var progress = 0;
+        var interval = setInterval(function() {
+          progress += Math.floor(Math.random() * 15) + 5;
+          if (progress > 100) progress = 100;
+          
+          $('#importProgressBar').css('width', progress + '%');
+          $('#importProgressText').text(progress + '%');
+          $('#importStatus').text('Processing records...');
+          
+          if (progress >= 100) {
+            clearInterval(interval);
+            $('#importProgress').hide();
+            
+            // Show success result
+            $('#importResults').show();
+            $('#importResultsAlert').removeClass('alert-success').removeClass('alert-danger').addClass('alert-success');
+            $('#importResultsTitle').html('<i class="fa fa-check-circle"></i> Import Completed (Demo)');
+            var recordCount = Math.floor(Math.random() * 50 + 10);
+            $('#importResultsMessage').text('Demo import completed. Note: Connect to backend for actual data import.');
+            $('#importResultsDetails').html(
+              '<li>Total records processed: ' + recordCount + '</li>' +
+              '<li>Successfully imported: ' + recordCount + '</li>' +
+              '<li>Errors: 0</li>' +
+              '<li>Skipped: 0</li>'
+            );
+            
+            btn.html('<i class="fa fa-upload"></i> Start Import');
+          }
+        }, 300);
+      });
+
+      // Download CSV Template
+      $('#downloadCSVTemplate').on('click', function() {
+        var importType = $('#importType').val();
+        var templates = {
+          cases: 'Case ID,Deceased Name,Date of Death,Service Type,Status,Notes\n001,John Doe,2025-11-25,Full Service,In Progress,Sample note',
+          clients: 'Client ID,Name,Phone,Email,Relationship,Address\nC001,Mary Doe,(555) 123-4567,mary@email.com,Spouse,123 Main St',
+          inventory: 'Item ID,Item Name,Category,Quantity,Unit Price,Status\nINV001,Oak Casket,Caskets,10,2500.00,In Stock',
+          staff: 'Staff ID,Name,Position,Department,Phone,Email,Status\nSTF001,James Wilson,Funeral Director,Operations,(555) 234-5678,james@company.com,Active',
+          appointments: 'Appointment ID,Client Name,Type,Date,Time,Status,Notes\nAPT001,Mary Doe,Arrangement Meeting,2025-11-30,10:00 AM,Scheduled,Initial consultation'
+        };
+        
+        var template = templates[importType] || templates.cases;
+        downloadFile(importType + '_template.csv', template);
+      });
+
+      // Download Excel Template (downloads CSV format as Excel is not natively supported in browser)
+      $('#downloadExcelTemplate').on('click', function() {
+        var importType = $('#importType').val();
+        var templates = {
+          cases: 'Case ID,Deceased Name,Date of Death,Service Type,Status,Notes\n001,John Doe,2025-11-25,Full Service,In Progress,Sample note',
+          clients: 'Client ID,Name,Phone,Email,Relationship,Address\nC001,Mary Doe,(555) 123-4567,mary@email.com,Spouse,123 Main St',
+          inventory: 'Item ID,Item Name,Category,Quantity,Unit Price,Status\nINV001,Oak Casket,Caskets,10,2500.00,In Stock',
+          staff: 'Staff ID,Name,Position,Department,Phone,Email,Status\nSTF001,James Wilson,Funeral Director,Operations,(555) 234-5678,james@company.com,Active',
+          appointments: 'Appointment ID,Client Name,Type,Date,Time,Status,Notes\nAPT001,Mary Doe,Arrangement Meeting,2025-11-30,10:00 AM,Scheduled,Initial consultation'
+        };
+        
+        var template = templates[importType] || templates.cases;
+        // Download as CSV with .xlsx extension (Excel can open CSV files)
+        downloadFile(importType + '_template.xlsx', template);
+        
+        // Show info message
+        $('#importResults').show();
+        $('#importResultsAlert').removeClass('alert-danger').addClass('alert-info');
+        $('#importResultsTitle').html('<i class="fa fa-info-circle"></i> Template Downloaded');
+        $('#importResultsMessage').text('Excel template downloaded. Note: This is a CSV-compatible format that can be opened in Microsoft Excel.');
+        $('#importResultsDetails').html('');
+      });
+
+      // Download file helper
+      function downloadFile(filename, content) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(content));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+      }
     });
   </script>
 </body>
