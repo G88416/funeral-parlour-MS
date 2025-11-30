@@ -848,50 +848,68 @@
       var fileInput = document.getElementById('fileInput');
       var selectedFile = null;
 
-      // Click to browse
-      dropzone.addEventListener('click', function() {
-        fileInput.click();
-      });
+      // Only add event listeners if elements exist
+      if (dropzone && fileInput) {
+        // Click to browse
+        dropzone.addEventListener('click', function() {
+          fileInput.click();
+        });
 
-      // Drag and drop events
-      dropzone.addEventListener('dragover', function(e) {
-        e.preventDefault();
-        dropzone.classList.add('dragover');
-      });
+        // Drag and drop events
+        dropzone.addEventListener('dragover', function(e) {
+          e.preventDefault();
+          dropzone.classList.add('dragover');
+        });
 
-      dropzone.addEventListener('dragleave', function(e) {
-        e.preventDefault();
-        dropzone.classList.remove('dragover');
-      });
+        dropzone.addEventListener('dragleave', function(e) {
+          e.preventDefault();
+          dropzone.classList.remove('dragover');
+        });
 
-      dropzone.addEventListener('drop', function(e) {
-        e.preventDefault();
-        dropzone.classList.remove('dragover');
-        var files = e.dataTransfer.files;
-        if (files.length > 0) {
-          handleFileSelect(files[0]);
-        }
-      });
+        dropzone.addEventListener('drop', function(e) {
+          e.preventDefault();
+          dropzone.classList.remove('dragover');
+          var files = e.dataTransfer.files;
+          if (files.length > 1) {
+            showImportError('Please drop only one file at a time.');
+            return;
+          }
+          if (files.length > 0) {
+            handleFileSelect(files[0]);
+          }
+        });
 
-      // File input change
-      fileInput.addEventListener('change', function() {
-        if (this.files.length > 0) {
-          handleFileSelect(this.files[0]);
-        }
-      });
+        // File input change
+        fileInput.addEventListener('change', function() {
+          if (this.files.length > 0) {
+            handleFileSelect(this.files[0]);
+          }
+        });
+      }
+
+      // Show error message in import modal
+      function showImportError(message) {
+        $('#importResults').show();
+        $('#importResultsAlert').removeClass('alert-success').addClass('alert-danger');
+        $('#importResultsTitle').html('<i class="fa fa-exclamation-circle"></i> Error');
+        $('#importResultsMessage').text(message);
+        $('#importResultsDetails').html('');
+      }
 
       // Handle file selection
       function handleFileSelect(file) {
-        var allowedTypes = ['text/csv', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
         var allowedExtensions = ['.csv', '.xls', '.xlsx'];
         
         var fileExtension = '.' + file.name.split('.').pop().toLowerCase();
         
         if (allowedExtensions.indexOf(fileExtension) === -1) {
-          alert('Please select a valid file format (CSV, XLS, or XLSX)');
+          showImportError('Please select a valid file format (CSV, XLS, or XLSX)');
           return;
         }
 
+        // Hide any previous error messages
+        $('#importResults').hide();
+        
         selectedFile = file;
         $('#selectedFileName').text(file.name + ' (' + formatFileSize(file.size) + ')');
         $('#selectedFileInfo').show();
@@ -995,11 +1013,11 @@
         return div.innerHTML;
       }
 
-      // Validate Import
+      // Validate Import (Demo functionality - replace with actual API call in production)
       $('#validateImportBtn').on('click', function() {
         if (!selectedFile) return;
         
-        // Simulate validation
+        // Demo: Simulate validation - In production, this would call a backend API
         var btn = $(this);
         btn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Validating...');
         
@@ -1010,13 +1028,13 @@
           // Show validation success
           $('#importResults').show();
           $('#importResultsAlert').removeClass('alert-danger').addClass('alert-success');
-          $('#importResultsTitle').html('<i class="fa fa-check-circle"></i> Validation Successful');
-          $('#importResultsMessage').text('File is ready for import.');
+          $('#importResultsTitle').html('<i class="fa fa-check-circle"></i> Validation Successful (Demo)');
+          $('#importResultsMessage').text('File is ready for import. Note: This is a demo - connect to backend for actual validation.');
           $('#importResultsDetails').html('<li>Records found: ' + Math.floor(Math.random() * 50 + 10) + '</li><li>Format: Valid</li><li>No errors detected</li>');
         }, 1500);
       });
 
-      // Start Import
+      // Start Import (Demo functionality - replace with actual API call in production)
       $('#startImportBtn').on('click', function() {
         if (!selectedFile) return;
         
@@ -1026,7 +1044,7 @@
         $('#importResults').hide();
         $('#importProgress').show();
         
-        // Simulate import progress
+        // Demo: Simulate import progress - In production, this would call a backend API
         var progress = 0;
         var interval = setInterval(function() {
           progress += Math.floor(Math.random() * 15) + 5;
@@ -1043,9 +1061,9 @@
             // Show success result
             $('#importResults').show();
             $('#importResultsAlert').removeClass('alert-success').removeClass('alert-danger').addClass('alert-success');
-            $('#importResultsTitle').html('<i class="fa fa-check-circle"></i> Import Completed Successfully');
+            $('#importResultsTitle').html('<i class="fa fa-check-circle"></i> Import Completed (Demo)');
             var recordCount = Math.floor(Math.random() * 50 + 10);
-            $('#importResultsMessage').text('All records have been imported successfully.');
+            $('#importResultsMessage').text('Demo import completed. Note: Connect to backend for actual data import.');
             $('#importResultsDetails').html(
               '<li>Total records processed: ' + recordCount + '</li>' +
               '<li>Successfully imported: ' + recordCount + '</li>' +
@@ -1073,10 +1091,27 @@
         downloadFile(importType + '_template.csv', template);
       });
 
-      // Download Excel Template (as CSV for simplicity)
+      // Download Excel Template (downloads CSV format as Excel is not natively supported in browser)
       $('#downloadExcelTemplate').on('click', function() {
         var importType = $('#importType').val();
-        alert('Excel template download would be available in production. For now, please use the CSV template.');
+        var templates = {
+          cases: 'Case ID,Deceased Name,Date of Death,Service Type,Status,Notes\n001,John Doe,2025-11-25,Full Service,In Progress,Sample note',
+          clients: 'Client ID,Name,Phone,Email,Relationship,Address\nC001,Mary Doe,(555) 123-4567,mary@email.com,Spouse,123 Main St',
+          inventory: 'Item ID,Item Name,Category,Quantity,Unit Price,Status\nINV001,Oak Casket,Caskets,10,2500.00,In Stock',
+          staff: 'Staff ID,Name,Position,Department,Phone,Email,Status\nSTF001,James Wilson,Funeral Director,Operations,(555) 234-5678,james@company.com,Active',
+          appointments: 'Appointment ID,Client Name,Type,Date,Time,Status,Notes\nAPT001,Mary Doe,Arrangement Meeting,2025-11-30,10:00 AM,Scheduled,Initial consultation'
+        };
+        
+        var template = templates[importType] || templates.cases;
+        // Download as CSV with .xlsx extension (Excel can open CSV files)
+        downloadFile(importType + '_template.xlsx', template);
+        
+        // Show info message
+        $('#importResults').show();
+        $('#importResultsAlert').removeClass('alert-danger').addClass('alert-info');
+        $('#importResultsTitle').html('<i class="fa fa-info-circle"></i> Template Downloaded');
+        $('#importResultsMessage').text('Excel template downloaded. Note: This is a CSV-compatible format that can be opened in Microsoft Excel.');
+        $('#importResultsDetails').html('');
       });
 
       // Download file helper
